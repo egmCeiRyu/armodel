@@ -145,12 +145,12 @@ img.modelqr {
     color: #000000;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
-    margin-top: 7px;
+    margin-top: 13px;
     display: inline-block;
     background-color: #ffffff;
     padding: 5px;
     width:133px;
-    border-radius: 10px;
+    border-radius: 6px;
 }
 
 /* === Responsive === */
@@ -175,7 +175,7 @@ model-viewer {
   flex-wrap: wrap;
   background-color: #ffffff;
   width: 100%;
-  max-width: 675px;
+  max-width: 601px;
   padding: 10px 15px;
   margin: 20px auto;
   border-radius: 10px;
