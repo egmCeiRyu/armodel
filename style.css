@@ -26,14 +26,14 @@ h1 {
     width: 60px;
     height: 60px;
     position: absolute;
+    transform: translateX(-50%);
     left: 80%;
     bottom: 186px;
     border-radius: 20px;
 }
 
 .return:hover {
-    background-color: #f27478;
-    color: #1E1E2F;
+    filter: brightness(0) saturate(100%) invert(39%) sepia(56%) saturate(634%) hue-rotate(315deg) brightness(93%) contrast(92%);
 }
 
 /* === AR Button === */
