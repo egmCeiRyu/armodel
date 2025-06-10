@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Model Viewer</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/zfi8dmc.css">
+</head>
+<body>
+    <button id="return-button" onclick="window.location.href='index.html'">サムネイルに戻る</button>
+    <model-viewer ar id="modelViewer" shadow-intensity="1" camera-controls touch-action="pan-y" shadow-softness="0"
+    camera-orbit="0deg 75deg 100m">
+    <button id="ar-button" slot="ar-button">ARスタート</button>
+    </model-viewer>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const modelUrl = urlParams.get('model');
+        const modelViewer = document.getElementById('modelViewer');
+        const qrImage = document.querySelector('.modelqr');
+    
+        if (modelUrl) {
+            modelViewer.setAttribute('src', modelUrl);
+
+            // Extract number from model filename, e.g., "model3.glb"
+            const match = modelUrl.match(/model(\d+)/);
+            if (match) {
+                const modelNumber = match[1];
+                qrImage.src = `qrcode/qr-model${modelNumber}.png`;
+            } else {
+                console.warn("Model number not found in URL.");
+            }
+        } else {
+            console.warn("No model URL provided in the query string.");
+        }
+        modelViewer.addEventListener('load', () => {
+            const scene = modelViewer.scene;
+            const light = scene.shadowLight;
+    
+            // Adjust light direction for shadows (x, y, z)
+            light.direction.set(0.5, -1, 0.5);
+        });
+    </script>
+</body>
+</html>
