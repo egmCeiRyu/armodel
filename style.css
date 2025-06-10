@@ -186,7 +186,7 @@ model-viewer {
 
 .logo {
   flex-basis: 100%;
-  font-size: clamp(16px, 4vw, 28px);
+  font-size: clamp(26px, 4vw, 28px);
   font-weight: bold;
   text-align: center;
 }
@@ -214,6 +214,6 @@ model-viewer {
   }
 
   .qrcode {
-    margin-top: 15px;
+    margin-top: 0px;
   }
 }
