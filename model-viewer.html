@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="https://use.typekit.net/zfi8dmc.css">
 </head>
 <body>
-    <button id="return-button" onclick="window.location.href='index.html'">サムネイルに戻る</button>
-    <model-viewer ar id="modelViewer" shadow-intensity="1" camera-controls touch-action="pan-y" shadow-softness="0"
+    <model-viewer ar id="modelViewer" shadow-intensity="1" camera-controls touch-action="pan-y" shadow-softness="1"
     camera-orbit="0deg 75deg 100m">
-    <button id="ar-button" slot="ar-button">ARスタート</button>
+    <a href="index.html">
+        <img class="return" src="icon/backward.png" alt="return" onclick="./index.html">
+        </a>
+    <button id="ar-button" slot="ar-button">AR</button>
     </model-viewer>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
