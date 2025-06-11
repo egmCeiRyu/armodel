@@ -114,18 +114,15 @@ div.title {
 
 /* === AR Button === */
 #ar-button {
-    width: 60px;
-    height: 60px;
+    
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 100px;
-    margin-bottom: 150px;
+    bottom: 50px;
     background-color: #000000;
     color: #ffffff;
     border: none;
-    font-size: 18px;
-    border-radius: 18px;
+    font-size: 21px;
     cursor: pointer;
     font-family: "novecento-sans", sans-serif;
 }
