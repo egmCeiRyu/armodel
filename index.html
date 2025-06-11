@@ -4,14 +4,14 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="mainpageStyle.css">
         <link rel="stylesheet" href="https://use.typekit.net/zfi8dmc.css">
         <title>3D Model Thumbnails</title>
 
     </head>
     <body>
-        <div class="thumbnail-container">
-            <div class="title">
+        <div class="mainpage-container">
+            <div class="mainpage-title">
               <a class="logo">
                 <span class="brand" style="color: black;">HOSOKAWA </span>
                   <span>MICRON</span>
@@ -19,90 +19,13 @@
               </a>
               <img class="qrcode" src="qrcode/mainWebsite.png" alt="QR Code">
             </div>
+          <div class="armenu-mainpage">
+            <a href="menu.html">AR MENU
+            </a>
             
-            <a href="model-viewer.html?model=models/model1.glb" id="model1" class="thumbnail-link" >
-                <img src="thumbnails/model1_thumb.png" alt="Model 1" class="thumbnail-img">
-            <span class="label">MODEL1</span>
-            </a>
-            <a href="model-viewer.html?model=models/model2.glb" id="model2" class="thumbnail-link">
-                <img src="thumbnails/model2_thumb.png" alt="Model 2" class="thumbnail-img" /><span class="label">MODEL2</span>
-            </a>
-            <a href="model-viewer.html?model=models/model3.glb" id="model3" class="thumbnail-link">
-                <img src="thumbnails/model3_thumb.png" alt="Model 3" class="thumbnail-img" /><span class="label">MODEL3</span>
-            </a>
-            <a href="model-viewer.html?model=models/model4.glb" id="model4" class="thumbnail-link">
-                <img src="thumbnails/model4_thumb.png" alt="Model 4" class="thumbnail-img" /><span class="label">MODEL4</span>
-            </a>
-            <a href="model-viewer.html?model=models/model5.glb" id="model5" class="thumbnail-link">
-                <img src="thumbnails/model5_thumb.png" alt="Model 5" class="thumbnail-img" /><span class="label">MODEL5</span>
-            </a>
-            <a href="model-viewer.html?model=models/model6.glb" id="model6" class="thumbnail-link">
-                <img src="thumbnails/model6_thumb.png" alt="Model 6" class="thumbnail-img" /><span class="label">MODEL6</span>
-            </a>
-            <a href="model-viewer.html?model=models/model7.glb" id="model7" class="thumbnail-link">
-                <img src="thumbnails/model7_thumb.png" alt="Model 7" class="thumbnail-img" /><span class="label">MODEL7</span>
-            </a>
-            <a href="model-viewer.html?model=models/model8.glb" id="model8" class="thumbnail-link">
-                <img src="thumbnails/model8_thumb.png" alt="Model 8" class="thumbnail-img" /><span class="label">MODEL8</span>
-            </a>
-            <a href="model-viewer.html?model=models/model9.glb" id="model9" class="thumbnail-link">
-                <img src="thumbnails/model9_thumb.png" alt="Model 9" class="thumbnail-img" /><span class="label">MODEL9</span>
-            </a>
-            <a href="model-viewer.html?model=models/model10.glb" id="model10" class="thumbnail-link">
-                <img src="thumbnails/model10_thumb.png" alt="Model 10" class="thumbnail-img" /><span class="label">MODEL10</span>
-            </a>
-
+          </div>
         </div>
-
-        <script type="module">
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
-            import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-analytics.js";
-            import { firebaseConfig } from "./firebase-config.js";
-          
-            const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
-          
-            document.getElementById("model1").addEventListener("click", () => {
-              logEvent(analytics, "button_click", { button_name: "model1" });
-            });
-          
-            document.getElementById("model2").addEventListener("click", () => {
-              logEvent(analytics, "button_click", { button_name: "model2" });
-            });
-
-            document.getElementById("model3").addEventListener("click", () => {
-              logEvent(analytics, "button_click", { button_name: "model3" });
-            });
-
-            document.getElementById("model4").addEventListener("click", () => {
-              logEvent(analytics, "button_click", { button_name: "model4" });
-            });
-
-            document.getElementById("model5").addEventListener("click", () => {
-              logEvent(analytics, "button_click", { button_name: "model5" });
-            });
-
-            document.getElementById("model6").addEventListener("click", () => {
-              logEvent(analytics, "button_click", { button_name: "model6" });
-            });
-
-            document.getElementById("model7").addEventListener("click", () => {
-              logEvent(analytics, "button_click", { button_name: "model7" });
-            });
-
-            document.getElementById("model8").addEventListener("click", () => {
-              logEvent(analytics, "button_click", { button_name: "model8" });
-            });
-
-            document.getElementById("model9").addEventListener("click", () => {
-              logEvent(analytics, "button_click", { button_name: "model9" });
-            });
-
-            document.getElementById("model10").addEventListener("click", () => {
-              logEvent(analytics, "button_click", { button_name: "model10" });
-            });
-            
-          </script>
+        
       
       <footer id="footerContents"> <a src="">Hosokawa Micron</a></footer>
     </body>
