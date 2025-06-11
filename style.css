@@ -198,36 +198,7 @@ img.modelqr {
     position: fixed;
 }
 
-/* === Thumbnail Container === */
-.thumbnail-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #0c3879;
-    width: 100%;
-    max-width: 675px;
-    /* height: 1081px; ❌ REMOVE this line */
-    margin: auto;
-    padding: 5px;
-    box-sizing: border-box;
-}
 
-
-/* === Thumbnail Image === */
-.thumbnail-img {
-    width: 128px;
-    height: 128px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-    border-radius: 9px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.thumbnail-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0px 16px rgba(0, 0, 0, 0.6);
-}
 
 /* === Thumbnail Link === */
 .thumbnail-link {
