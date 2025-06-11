@@ -70,11 +70,6 @@ h1 {
     font-family: "novecento-sans", sans-serif;
 }
 
-#ar-button:hover {
-    background-color: #f27478;
-    color: #1E1E2F;
-}
-
 #ar-button:after {
   content: "";
   background: #f1f1f1;
