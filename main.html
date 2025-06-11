@@ -5,27 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>3D Model Thumbnails</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
   <style>
-    /* General page style for visibility */
     body {
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
-      background-color: #1a1a1a;
-      color: white;
-      position: relative;
+      background-color: #0b36aa;
+      color: #ffffff;
       overflow: hidden;
+      position: relative;
     }
 
-    /* QR code hiding on mobile */
-    @media screen and (max-width: 600px) {
-      .qrcode {
-        display: none;
-      }
-    }
-
-    /* Bubbles background */
     .bubbles {
       position: fixed;
       top: 0;
@@ -34,41 +24,34 @@
       height: 100%;
       overflow: hidden;
       z-index: 0;
+      pointer-events: none;
     }
 
-    .bubbles span {
+    .bubble {
       position: absolute;
-      bottom: -50px;
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.2);
+      bottom: -60px;
+      background: rgba(255, 255, 255, 0.8);
       border-radius: 50%;
-      animation: rise 12s infinite ease-in;
+      opacity: 0.6;
+      animation-name: rise;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
     }
-
-    .bubbles span:nth-child(1) { left: 10%; animation-duration: 11s; width: 20px; height: 20px; }
-    .bubbles span:nth-child(2) { left: 25%; animation-duration: 10s; }
-    .bubbles span:nth-child(3) { left: 40%; animation-duration: 14s; width: 25px; height: 25px; }
-    .bubbles span:nth-child(4) { left: 55%; animation-duration: 9s; }
-    .bubbles span:nth-child(5) { left: 70%; animation-duration: 13s; width: 30px; height: 30px; }
-    .bubbles span:nth-child(6) { left: 85%; animation-duration: 8s; }
-    .bubbles span:nth-child(7) { left: 95%; animation-duration: 12s; }
 
     @keyframes rise {
       0% {
         transform: translateY(0) scale(1);
-        opacity: 0.4;
+        opacity: 0;
       }
-      50% {
-        opacity: 0.8;
+      10% {
+        opacity: 0.7;
       }
       100% {
-        transform: translateY(-120vh) scale(0.8);
+        transform: translateY(-120vh) scale(1.5);
         opacity: 0;
       }
     }
 
-    /* Page layout */
     .mainpage-container {
       position: relative;
       z-index: 1;
@@ -79,6 +62,12 @@
     .qrcode {
       width: 120px;
       margin-top: 1em;
+    }
+
+    @media screen and (max-width: 600px) {
+      .qrcode {
+        display: none;
+      }
     }
 
     footer {
@@ -92,18 +81,8 @@
 </head>
 <body>
 
-  <!-- Bubble animation container -->
-  <div class="bubbles">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+  <div class="bubbles" id="bubbles"></div>
 
-  <!-- Main content -->
   <div class="mainpage-container">
     <div class="mainpage-title">
       <a class="logo">
@@ -123,5 +102,38 @@
     <a href="#">Hosokawa Micron</a>
   </footer>
 
+  <script>
+    const bubbleContainer = document.getElementById('bubbles');
+
+    function createBubble() {
+      const bubble = document.createElement('span');
+      bubble.classList.add('bubble');
+
+      // Random size between 10px and 30px
+      const size = Math.random() * 20 + 10;
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+
+      // Random horizontal position
+      bubble.style.left = `${Math.random() * 100}%`;
+
+      // Random animation duration between 10s and 20s
+      bubble.style.animationDuration = `${10 + Math.random() * 10}s`;
+
+      // Random animation delay
+      bubble.style.animationDelay = `${Math.random() * 5}s`;
+
+      bubbleContainer.appendChild(bubble);
+
+      // Remove the bubble after animation ends
+      setTimeout(() => bubble.remove(), 20000);
+    }
+
+    // Generate new bubbles periodically
+    setInterval(createBubble, 500);
+  </script>
+
 </body>
 </html>
+
+
