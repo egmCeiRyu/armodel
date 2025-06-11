@@ -10,16 +10,21 @@
   <style>
     .return, .specification {
       position: absolute;
-      top: 20px;
-      width: 40px;
-      height: 40px;
+      
+      
       cursor: pointer;
     }
     .return {
       left: 10%;
+      width: 40px;
+      height: 40px;
+      top: 35px;
     }
     .specification {
       right: 10%;
+      width: 50px;
+      height: 50px;
+      top: 28px;
     }
 
     /* Tela de especificações (overlay) */
@@ -59,6 +64,8 @@
       bottom: 20px;
       right: 20px;
       z-index: 10;
+      width: 90px;
+      height: 90px;
     }
   </style>
 </head>
@@ -72,7 +79,7 @@
     </a>
 
     <!-- Botão especificações -->
-    <img class="specification" src="icon/backward.png" alt="specification" id="specButton">
+    <img class="specification" src="icon/information.png" alt="specification" id="specButton">
 
     <button id="ar-button" slot="ar-button">AR</button>
   </model-viewer>
