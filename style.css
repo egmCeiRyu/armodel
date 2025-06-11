@@ -117,7 +117,6 @@ div.title {
     width: 60px;
     height: 60px;
     position: absolute;
-    left: 90%;
     transform: translateX(-50%);
     bottom: 100px;
     margin-bottom: 10px;
