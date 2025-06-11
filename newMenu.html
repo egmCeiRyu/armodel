@@ -20,9 +20,11 @@
     .thumbnail-link.selected {
       border: 2px solid rgb(255, 197, 0);
       box-shadow: 0 0 10px rgba(255, 79, 0, 0.5);
+      z-index: 1;
     }
 
     #view-model-btn {
+      position: relative;
       display: block;
       margin: -17px auto;
       padding: 10px 20px;
@@ -34,6 +36,7 @@
       cursor: pointer;
       width: 100px;
       height: 100px;
+      z-index: 10;
         
     }
     #view-model-btn:disabled {
