@@ -9,13 +9,7 @@
   <title>3D Model Thumbnails</title>
 
   <style>
-    .thumbnail-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin: 20px;
-    }
+
     .thumbnail-link {
       cursor: pointer;
       display: inline-block;
@@ -24,18 +18,10 @@
       transition: border 0.2s, box-shadow 0.2s;
     }
     .thumbnail-link.selected {
-      border: 2px solid #007bff;
-      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+      border: 2px solid rgb(255, 197, 0);
+      box-shadow: 0 0 10px rgba(255, 79, 0, 0.5);
     }
-    .thumbnail-img {
-      width: 120px;
-      height: auto;
-    }
-    .label {
-      display: block;
-      margin-top: 5px;
-      font-weight: bold;
-    }
+
     #view-model-btn {
       display: block;
       margin: 30px auto;
@@ -60,7 +46,7 @@
       font-family: 'Roboto', sans-serif;
     }
     .catalog {
-      font-size: 18px;
+      font-size: 32px;
     }
   </style>
 </head>
