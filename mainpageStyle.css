@@ -44,10 +44,10 @@ body {
     margin-top: 417px;
     width: 271px;
     background-color: white;  
+    height: 40px;
 }
 
 .armenu-mainpage a{
-    text-align: center;
     text-decoration: none;
     margin: auto;
     padding-left: 35%;
