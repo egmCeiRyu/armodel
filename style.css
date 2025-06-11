@@ -45,7 +45,6 @@ body {
     margin-top: 417px;
     width: 331px;
     background-color: white; 
-
 }
 
 /* === Title Section === */
@@ -82,6 +81,7 @@ div.title {
   opacity: 1;
   transition: 0s
 }
+
 .return {
     width: 60px;
     height: 60px;
@@ -114,7 +114,6 @@ div.title {
 
 /* === AR Button === */
 #ar-button {
-    
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
