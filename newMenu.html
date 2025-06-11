@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/zfi8dmc.css">
+  <title>3D Model Thumbnails</title>
+
+  <style>
+    .thumbnail-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px;
+    }
+    .thumbnail-link {
+      cursor: pointer;
+      display: inline-block;
+      text-align: center;
+      border: 2px solid transparent;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+    .thumbnail-link.selected {
+      border: 2px solid #007bff;
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    }
+    .thumbnail-img {
+      width: 120px;
+      height: auto;
+    }
+    .label {
+      display: block;
+      margin-top: 5px;
+      font-weight: bold;
+    }
+    #view-model-btn {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #view-model-btn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .title {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .logo {
+      font-size: 24px;
+      font-family: 'Roboto', sans-serif;
+    }
+    .catalog {
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="title">
+    <a class="logo">
+      <span class="brand" style="color: black;">HOSOKAWA </span>
+      <span>MICRON</span>
+      <span class="catalog"> ARカタログ</span>
+    </a>
+  </div>
+
+  <div class="thumbnail-container" id="model-thumbnails">
+    <!-- Modelos -->
+    <div class="thumbnail-link" data-model="models/model1.glb" data-name="model1">
+      <img src="thumbnails/model1_thumb.png" alt="Model 1" class="thumbnail-img">
+      <span class="label">MODEL1</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model2.glb" data-name="model2">
+      <img src="thumbnails/model2_thumb.png" alt="Model 2" class="thumbnail-img">
+      <span class="label">MODEL2</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model3.glb" data-name="model3">
+      <img src="thumbnails/model3_thumb.png" alt="Model 3" class="thumbnail-img">
+      <span class="label">MODEL3</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model4.glb" data-name="model4">
+      <img src="thumbnails/model4_thumb.png" alt="Model 4" class="thumbnail-img">
+      <span class="label">MODEL4</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model5.glb" data-name="model5">
+      <img src="thumbnails/model5_thumb.png" alt="Model 5" class="thumbnail-img">
+      <span class="label">MODEL5</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model6.glb" data-name="model6">
+      <img src="thumbnails/model6_thumb.png" alt="Model 6" class="thumbnail-img">
+      <span class="label">MODEL6</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model7.glb" data-name="model7">
+      <img src="thumbnails/model7_thumb.png" alt="Model 7" class="thumbnail-img">
+      <span class="label">MODEL7</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model8.glb" data-name="model8">
+      <img src="thumbnails/model8_thumb.png" alt="Model 8" class="thumbnail-img">
+      <span class="label">MODEL8</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model9.glb" data-name="model9">
+      <img src="thumbnails/model9_thumb.png" alt="Model 9" class="thumbnail-img">
+      <span class="label">MODEL9</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model10.glb" data-name="model10">
+      <img src="thumbnails/model10_thumb.png" alt="Model 10" class="thumbnail-img">
+      <span class="label">MODEL10</span>
+    </div>
+  </div>
+
+  <button id="view-model-btn" disabled>AR</button>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
+    import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-analytics.js";
+    import { firebaseConfig } from "./firebase-config.js";
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    let selectedModelUrl = "";
+    let selectedModelName = "";
+
+    const thumbnails = document.querySelectorAll('.thumbnail-link');
+    const viewModelBtn = document.getElementById('view-model-btn');
+
+    thumbnails.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        thumbnails.forEach(t => t.classList.remove('selected'));
+        thumb.classList.add('selected');
+
+        selectedModelUrl = thumb.getAttribute('data-model');
+        selectedModelName = thumb.getAttribute('data-name');
+        viewModelBtn.disabled = false;
+      });
+    });
+
+    viewModelBtn.addEventListener('click', () => {
+      if (selectedModelUrl) {
+        logEvent(analytics, "button_click", { button_name: selectedModelName });
+        window.location.href = `model-viewer.html?model=${encodeURIComponent(selectedModelUrl)}`;
+      }
+    });
+  </script>
+
+  <footer id="footerContents" style="text-align:center; margin-top:40px;">
+    <a>Hosokawa Micron</a>
+  </footer>
+</body>
+</html>

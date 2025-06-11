@@ -1,49 +1,117 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3D Model Viewer</title>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.typekit.net/zfi8dmc.css">
-</head>
-<body>
-    <model-viewer ar id="modelViewer" shadow-intensity="1" camera-controls touch-action="pan-y" shadow-softness="1"
-    camera-orbit="0deg 75deg 100m">
-    <a href="index.html">
-        <img class="return" src="icon/backward.png" alt="return" onclick="./index.html">
-        </a>
-    <button id="ar-button" slot="ar-button">AR</button>
-    </model-viewer>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const modelUrl = urlParams.get('model');
-        const modelViewer = document.getElementById('modelViewer');
-        const qrImage = document.querySelector('.modelqr');
-    
-        if (modelUrl) {
-            modelViewer.setAttribute('src', modelUrl);
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Model Viewer</title>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/zfi8dmc.css">
+  <style>
+    .return, .specification {
+      position: absolute;
+      top: 20px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+    .return {
+      left: 10%;
+    }
+    .specification {
+      right: 10%;
+    }
 
-            // Extract number from model filename, e.g., "model3.glb"
-            const match = modelUrl.match(/model(\d+)/);
-            if (match) {
-                const modelNumber = match[1];
-                qrImage.src = `qrcode/qr-model${modelNumber}.png`;
-            } else {
-                console.warn("Model number not found in URL.");
-            }
-        } else {
-            console.warn("No model URL provided in the query string.");
-        }
-        modelViewer.addEventListener('load', () => {
-            const scene = modelViewer.scene;
-            const light = scene.shadowLight;
+    /* Tela de especificações (overlay) */
+    .spec-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to bottom right, rgba(0,0,0,0.85), rgba(50,50,50,0.95));
+      color: white;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .spec-overlay h2 {
+      margin-bottom: 15px;
+    }
+
+    .close-spec {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ffffff22;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    #ar-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10;
+    }
+  </style>
+</head>
+
+<body>
+  <model-viewer ar id="modelViewer" shadow-intensity="1" camera-controls touch-action="pan-y" shadow-softness="1" camera-orbit="0deg 75deg 100m">
     
-            // Adjust light direction for shadows (x, y, z)
-            light.direction.set(0.5, -1, 0.5);
-        });
-    </script>
+    <!-- Botão voltar -->
+    <a href="newMenu.html">
+      <img class="return" src="icon/backward.png" alt="return">
+    </a>
+
+    <!-- Botão especificações -->
+    <img class="specification" src="icon/backward.png" alt="specification" id="specButton">
+
+    <button id="ar-button" slot="ar-button">AR</button>
+  </model-viewer>
+
+  <!-- Sobreposição de especificações -->
+  <div class="spec-overlay" id="specOverlay">
+    <h2>製品仕様</h2>
+    <p>素材などの情報として、さまざまな情報を入手できます。</p>
+    <button class="close-spec" id="closeSpec">戻る</button>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const modelUrl = urlParams.get('model');
+    const modelViewer = document.getElementById('modelViewer');
+
+    if (modelUrl) {
+      modelViewer.setAttribute('src', modelUrl);
+    }
+
+    modelViewer.addEventListener('load', () => {
+      const scene = modelViewer.scene;
+      const light = scene.shadowLight;
+      light.direction.set(0.5, -1, 0.5);
+    });
+
+    // Mostrar / ocultar painel de especificações
+    const specButton = document.getElementById('specButton');
+    const specOverlay = document.getElementById('specOverlay');
+    const closeSpec = document.getElementById('closeSpec');
+
+    specButton.addEventListener('click', () => {
+      specOverlay.style.display = 'flex';
+    });
+
+    closeSpec.addEventListener('click', () => {
+      specOverlay.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
+
