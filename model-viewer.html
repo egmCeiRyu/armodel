@@ -155,7 +155,7 @@
     <button class="close-spec" id="closeSpec">戻る</button>
   </div>
 
-  <script>
+  <script type="module">
     const urlParams = new URLSearchParams(window.location.search);
     const modelUrl = urlParams.get('model');
     const modelViewer = document.getElementById('modelViewer');
@@ -183,7 +183,6 @@
       specOverlay.style.display = 'none';
     });
     
-                   <script type="module">
                   const modelViewer = document.querySelector('#dimension-demo');
 
                   modelViewer.querySelector('#src').addEventListener('input', (event) => {
