@@ -413,7 +413,7 @@
     modelViewer.addEventListener('load', () => {
       const size = modelViewer.getDimensions();
       const maxDim = Math.max(size.x, size.y, size.z);
-      const suggestedDistance = maxDim * 5.5; // Ajuste o fator conforme necessário
+      const suggestedDistance = maxDim * 10.5; // Ajuste o fator conforme necessário
       modelViewer.cameraOrbit = `0deg 75deg ${suggestedDistance}m`;
   });
     
