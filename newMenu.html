@@ -4,11 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://use.typekit.net/zfi8dmc.css">
   <title>3D Model Thumbnails</title>
 
   <style>
+    
+    body{
+      margin: 0px
+    }
+
+    .label {
+    color: #000000;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 7px;
+    display: inline-block;
+    background-color: #ffffff;
+    padding: 6.2px;
+    width:120px;
+    border-radius: 5px;
+``}
 
       /* === Thumbnail Container === */
     .thumbnail-container {
@@ -20,11 +35,10 @@
         max-width: 675px;
         /* height: 1081px; ❌ REMOVE this line */
         margin: auto;
-        padding: 15px;
+        padding: 14px;
         box-sizing: border-box;
     }
-
-
+    
     /* === Thumbnail Image === */
     .thumbnail-img {
         width: 132px;
@@ -46,7 +60,7 @@
       display: inline-block;
       text-align: center;
       transition: border 0.2s, box-shadow 0.2s;
-      padding: 18px;
+      padding: 15px;
     }
     
     .thumbnail-link.selected  {
@@ -82,11 +96,15 @@
     }
     .title {
       text-align: center;
-      margin-top: 20px;
+      background-color: skyblue;
+      padding: 0px;
+      margin: 0px;
     }
     .logo {
       font-size: 30px;
       font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      text-align: center;
     }
     .catalog {
       font-size: 32px;

@@ -171,17 +171,6 @@ img.modelqr {
 }
 
 /* === Labels === */
-.label {
-    color: #000000;
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif;
-    margin-top: 7px;
-    display: inline-block;
-    background-color: #ffffff;
-    padding: 6.2px;
-    width:120px;
-    border-radius: 5px;
-}
 
 /* === Responsive === */
 @media (min-width: 600px) {
@@ -214,12 +203,6 @@ model-viewer {
   color: #898989;
 }
 
-.logo {
-  flex-basis: 100%;
-  font-size: clamp(26px, 4vw, 28px);
-  font-weight: bold;
-  text-align: center;
-}
 
 .brand {
   display: inline;
