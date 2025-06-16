@@ -175,7 +175,7 @@
 
 <body>
 <model-viewer ar id="modelViewer" shadow-intensity="1" camera-controls touch-action="pan-y" shadow-softness="1"
-    camera-orbit="0deg 75deg 200m" scale="1 1 1" ar-modes="webxr scene-viewer quick-look" >
+    camera-orbit="-25deg 75deg 200m" scale="1 1 1" ar-modes="webxr scene-viewer quick-look" >
                   <button style="background-color:rgb(0,0,0)" slot="hotspot-dot+X-Y+Z" class="dot" data-position="1 -1 1" data-normal="1 0 0"></button>
                   <button slot="hotspot-dim+X-Y" class="dim" data-position="1 -1 0" data-normal="1 0 0"></button>
                   <button style="background-color:rgb(0,0,0)" slot="hotspot-dot+X-Y-Z" class="dot" data-position="1 -1 -1" data-normal="1 0 0"></button>
@@ -304,23 +304,23 @@
   const dimElements = [...modelViewer.querySelectorAll('button'), modelViewer.querySelector('#dimLines')];
 
 
-  // update svg
-  function drawLine(svgLine, dotHotspot1, dotHotspot2, dimensionHotspot) {
-    if (dotHotspot1 && dotHotspot2) {
-      svgLine.setAttribute('x1', dotHotspot1.canvasPosition.x);
-      svgLine.setAttribute('y1', dotHotspot1.canvasPosition.y);
-      svgLine.setAttribute('x2', dotHotspot2.canvasPosition.x);
-      svgLine.setAttribute('y2', dotHotspot2.canvasPosition.y);
+    // update svg
+    function drawLine(svgLine, dotHotspot1, dotHotspot2, dimensionHotspot) {
+      if (dotHotspot1 && dotHotspot2) {
+        svgLine.setAttribute('x1', dotHotspot1.canvasPosition.x);
+        svgLine.setAttribute('y1', dotHotspot1.canvasPosition.y);
+        svgLine.setAttribute('x2', dotHotspot2.canvasPosition.x);
+        svgLine.setAttribute('y2', dotHotspot2.canvasPosition.y);
 
-      // use provided optional hotspot to tie visibility of this svg line to
-      if (dimensionHotspot && !dimensionHotspot.facingCamera) {
-        svgLine.classList.add('hide');
-      }
-      else {
-        svgLine.classList.remove('hide');
+        // use provided optional hotspot to tie visibility of this svg line to
+        if (dimensionHotspot && !dimensionHotspot.facingCamera) {
+          svgLine.classList.add('hide');
+        }
+        else {
+          svgLine.classList.remove('hide');
+        }
       }
     }
-  }
 
     const dimLines = modelViewer.querySelectorAll('line');
 
@@ -416,6 +416,15 @@
       const suggestedDistance = maxDim * 5.5; // Ajuste o fator conforme necessário
       modelViewer.cameraOrbit = `0deg 75deg ${suggestedDistance}m`;
   });
+    
+    modelViewer.addEventListener('fullscreenchange', () => {
+      const arButtons = modelViewer.shadowRoot?.querySelectorAll('button[slot="ar-button"]');
+      if (arButtons && arButtons.length > 1) {
+        for (let i = 1; i < arButtons.length; i++) {
+          arButtons[i].remove();
+    }
+  }
+});
   </script>
 </body>
 </html>
