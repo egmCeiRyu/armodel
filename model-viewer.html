@@ -213,32 +213,91 @@
   </div>
 
   <script type="module">
-    const urlParams = new URLSearchParams(window.location.search);
-    const modelUrl = urlParams.get('model');
-    const modelViewer = document.getElementById('modelViewer');
+  const urlParams = new URLSearchParams(window.location.search);
+  const modelUrl = urlParams.get('model');
+  const modelViewer = document.getElementById('modelViewer');
 
-    if (modelUrl) {
-      modelViewer.setAttribute('src', modelUrl);
+  if (modelUrl) {
+    modelViewer.setAttribute('src', modelUrl);
+  }
+
+  // === ESPECIFICAÇÕES POR MODELO ===
+  const modelSpecs = {
+    model1: {
+      title: "椅子の仕様",
+      description: "木製フレームと布張りの座面を備えたモダンなデザインの椅子。軽量で耐久性があります。",
+    },
+    model2: {
+      title: "テーブルの仕様",
+      description: "ガラス天板と金属脚を備えたスタイリッシュなダイニングテーブル。最大6人まで対応可能。",
+    },
+    model3: {
+      title: "ランプの仕様",
+      description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+    },
+    model4: {
+      title: "ランプの仕様",
+      description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+    },
+    model5: {
+      title: "ランプの仕様",
+      description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+    },
+    model6: {
+      title: "ランプの仕様",
+      description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+    },
+    model7: {
+      title: "ランプの仕様",
+      description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+    },
+    model8: {
+      title: "ランプの仕様",
+      description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+    },
+    model9: {
+      title: "ランプの仕様",
+      description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+    },
+    model10: {
+      title: "ランプの仕様",
+      description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+    },
+    // Adicione mais conforme necessário
+  };
+
+  const specButton = document.getElementById('specButton');
+  const specOverlay = document.getElementById('specOverlay');
+  const closeSpec = document.getElementById('closeSpec');
+
+  // Obter nome base do modelo (ex: chair.glb -> chair)
+  let modelKey = "";
+  if (modelUrl) {
+    modelKey = modelUrl.split('/').pop().split('.')[0]; // 'chair.glb' → 'chair'
+
+    if (modelSpecs[modelKey]) {
+      const spec = modelSpecs[modelKey];
+      specOverlay.querySelector('h2').textContent = spec.title;
+      specOverlay.querySelector('p').textContent = spec.description;
+    } else {
+      specOverlay.querySelector('h2').textContent = "仕様情報がありません";
+      specOverlay.querySelector('p').textContent = "このモデルの仕様はまだ登録されていません。";
     }
+  }
 
-    modelViewer.addEventListener('load', () => {
-      const scene = modelViewer.scene;
-      const light = scene.shadowLight;
-      light.direction.set(0.5, -1, 0.5);
-    });
+  specButton.addEventListener('click', () => {
+    specOverlay.style.display = 'flex';
+  });
 
-    // Mostrar / ocultar painel de especificações
-    const specButton = document.getElementById('specButton');
-    const specOverlay = document.getElementById('specOverlay');
-    const closeSpec = document.getElementById('closeSpec');
+  closeSpec.addEventListener('click', () => {
+    specOverlay.style.display = 'none';
+  });
 
-    specButton.addEventListener('click', () => {
-      specOverlay.style.display = 'flex';
-    });
-
-    closeSpec.addEventListener('click', () => {
-      specOverlay.style.display = 'none';
-    });
+  modelViewer.addEventListener('load', () => {
+    const scene = modelViewer.scene;
+    const light = scene.shadowLight;
+    light.direction.set(0.5, -1, 0.5);
+  });
     
 
 
