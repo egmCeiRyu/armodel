@@ -20,7 +20,7 @@
         max-width: 675px;
         /* height: 1081px; ❌ REMOVE this line */
         margin: auto;
-        padding: 5px;
+        padding: 12px;
         box-sizing: border-box;
     }
 
@@ -47,9 +47,11 @@
       text-align: center;
       transition: border 0.2s, box-shadow 0.2s;
       padding: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
     }
     
-    .thumbnail-link.selected .thumbnail-img {
+    .thumbnail-link.selected  {
       border: 2px solid rgb(255, 197, 0);
       box-shadow: 0 0 10px rgba(255, 79, 0, 0.5);
       border-radius: 10px;
@@ -117,16 +119,16 @@
   <div class="thumbnail-container" id="model-thumbnails">
     <!-- Modelos -->
     <div class="thumbnail-link" data-model="models/model1.glb" data-name="model1">
-      <img src="thumbnails/model1_thumb.png" alt="Model 1" class="thumbnail-img">
-      <span class="label">MODEL1</span>
+          <img src="thumbnails/model1_thumb.png" alt="Model 1" class="thumbnail-img">
+          <span class="label">MODEL1</span>
     </div>
     <div class="thumbnail-link" data-model="models/model2.glb" data-name="model2">
-      <img src="thumbnails/model2_thumb.png" alt="Model 2" class="thumbnail-img">
-      <span class="label">MODEL2</span>
+        <img src="thumbnails/model2_thumb.png" alt="Model 2" class="thumbnail-img">
+        <span class="label">MODEL2</span>
     </div>
     <div class="thumbnail-link" data-model="models/model3.glb" data-name="model3">
-      <img src="thumbnails/model3_thumb.png" alt="Model 3" class="thumbnail-img">
-      <span class="label">MODEL3</span>
+        <img src="thumbnails/model3_thumb.png" alt="Model 3" class="thumbnail-img">
+        <span class="label">MODEL3</span>
     </div>
     <div class="thumbnail-link" data-model="models/model4.glb" data-name="model4">
       <img src="thumbnails/model4_thumb.png" alt="Model 4" class="thumbnail-img">
