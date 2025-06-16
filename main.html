@@ -197,6 +197,19 @@
         color: #85d8fd;
         text-decoration: none;
       }
+      
+      .brand-line {
+        white-space: nowrap; /* prevent line break */
+        display: inline-block;
+      }
+
+      .brand {
+        color: black;
+      }
+
+      .micron {
+        color: inherit; /* keeps same color as surrounding text, or define as needed */
+      }
     </style>
   </head>
 
@@ -214,9 +227,12 @@
       <div class="mainpage-container">
         <div class="mainpage-title">
           <a class="logo">
-            <span class="brand">HOSOKAWA </span>
-            <span>MICRON</span>
-            <span class="catalog"> ARカタログ</span>
+            <span class="brand-line">
+            <span class="brand">HOSOKAWA</span>
+            <span class="micron"> MICRON</span>
+            </span>
+            <br>
+            <span class="catalog">ARカタログ</span>
           </a>
           <br />
           <img class="qrcode" src="qrcode/mainWebsite.png" alt="QR Code" />
@@ -271,20 +287,20 @@
       const qrContainer = document.getElementById("qr-container");
       const mainContent = document.getElementById("main-content");
 
-      if (!isMobileDevice()) {
-        // Hide the main site on PC
-        mainContent.style.display = "none";
-
-        // Show QR code for mobile access
-        qrContainer.style.display = "block";
-
-        // Generate QR code with current URL
-        new QRCode(document.getElementById("qrcode"), {
-          text: window.location.href,
-          width: 200,
-          height: 200
-        });
-      }
+      //if (!isMobileDevice()) {
+      //  // Hide the main site on PC
+      //  mainContent.style.display = "none";
+//
+      //  // Show QR code for mobile access
+      //  qrContainer.style.display = "block";
+//
+      //  // Generate QR code with current URL
+      //  new QRCode(document.getElementById("qrcode"), {
+      //    text: window.location.href,
+      //    width: 200,
+      //    height: 200
+      //  });
+      //}
     </script>
   </body>
 </html>
