@@ -175,7 +175,7 @@
 
 <body>
 <model-viewer ar id="modelViewer" shadow-intensity="1" camera-controls touch-action="pan-y" shadow-softness="1"
-    camera-orbit="0deg 75deg 100m" scale="1 1 1" >
+    camera-orbit="0deg 75deg 200m" scale="1 1 1" >
                   <button style="background-color:rgb(0,0,0)" slot="hotspot-dot+X-Y+Z" class="dot" data-position="1 -1 1" data-normal="1 0 0"></button>
                   <button slot="hotspot-dim+X-Y" class="dim" data-position="1 -1 0" data-normal="1 0 0"></button>
                   <button style="background-color:rgb(0,0,0)" slot="hotspot-dot+X-Y-Z" class="dot" data-position="1 -1 -1" data-normal="1 0 0"></button>
@@ -408,6 +408,13 @@
     renderSVG();
 
     modelViewer.addEventListener('camera-change', renderSVG);
+  });
+    
+    modelViewer.addEventListener('load', () => {
+      const size = modelViewer.getDimensions();
+      const maxDim = Math.max(size.x, size.y, size.z);
+      const suggestedDistance = maxDim * 5.5; // Ajuste o fator conforme necessário
+      modelViewer.cameraOrbit = `0deg 75deg ${suggestedDistance}m`;
   });
   </script>
 </body>
