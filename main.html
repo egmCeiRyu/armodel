@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>3D Model Thumbnails</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
       body {
         margin: 0;
@@ -218,6 +217,11 @@
         color: inherit; /* keeps same color as surrounding text, or define as needed */
       }
       
+      .qrcode2{
+        width:200px;
+        height: 200px;
+      }
+      
     </style>
   </head>
 
@@ -226,7 +230,9 @@
       <!-- QR container OR main content -->
       <div id="qr-container" style="display: none;">
         <p>このQRコードをスキャンしてモバイルでご覧ください：</p>
-        <div id="qrcode"></div>
+        <div id="qrcode">
+          <img class="qrcode2" src="qrcode/mainWebsite.png" alt="QR Code" />
+        </div>
       </div>
 
     <div class="bubbles" id="bubbles"></div>
