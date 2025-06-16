@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>3D Model Thumbnails</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <style>
     body {
       margin: 0;
@@ -110,8 +111,6 @@
       color: #ccc;
     }
     
-
-  
     .brand {
       display: inline;
       color: black;
@@ -142,24 +141,30 @@
     }
     
 
-/* Optional: Center the QR code under text on mobile */
-@media (max-width: 600px) {
-  .title {
-    flex-direction: column;
-  }
+    /* Optional: Center the QR code under text on mobile */
+    @media (max-width: 600px) {
+      .title {
+        flex-direction: column;
+      }
 
-  .qrcode {
-    margin-top: 0px;
-  }
-}
+      .qrcode {
+        margin-top: 0px;
+      }
+    }
   </style>
 </head>
   
   
 <body>
 
+  <div id="qr-container" style="display: none; text-align: center; margin: 40px;">
+    <p>Scan this QR code to view on your mobile:</p>
+    <div id="qrcode"></div>
+  </div>
+  
   <div class="bubbles" id="bubbles"></div>
-
+  
+<div id="main-content">
   <div class="mainpage-container">
     <div class="mainpage-title">
       <a class="logo">
@@ -175,7 +180,8 @@
   <div class="armenu-mainpage">
       <a class="arword" href="newMenu.html">AR MENU</a>
   </div>
-
+</div>
+  
   <footer>
     <a href="https://www.hosokawamicron.co.jp/">Hosokawa Micron</a>
   </footer>
@@ -209,6 +215,29 @@
 
     // Generate new bubbles periodically
     setInterval(createBubble, 500);
+    
+      function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+
+  const qrContainer = document.getElementById('qr-container');
+  const mainContent = document.getElementById('main-content');
+
+  if (!isMobileDevice()) {
+    // Hide the main site on PC
+    mainContent.style.display = 'none';
+
+    // Show QR code for mobile access
+    qrContainer.style.display = 'block';
+
+    // Generate QR code with current URL
+    new QRCode(document.getElementById("qrcode"), {
+      text: window.location.href,
+      width: 200,
+      height: 200
+    });
+  }
+    
   </script>
 
 </body>
