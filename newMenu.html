@@ -27,13 +27,12 @@
 
     /* === Thumbnail Image === */
     .thumbnail-img {
-        width: 128px;
-        height: 128px;
+        width: 132px;
+        height: 132px;
         object-fit: cover;
         display: block;
         margin: 0 auto;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        border-radius: 5px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -47,13 +46,15 @@
       display: inline-block;
       text-align: center;
       transition: border 0.2s, box-shadow 0.2s;
-      padding: 20px;
+      padding: 5px;
     }
-    .thumbnail-link.selected {
+    
+    .thumbnail-link.selected .thumbnail-img {
       border: 2px solid rgb(255, 197, 0);
       box-shadow: 0 0 10px rgba(255, 79, 0, 0.5);
-      z-index: 1;
+      border-radius: 10px;
     }
+    
     #view-model-btn {
       position: fixed;
       bottom: 21px; /* Distance from the bottom of the screen */
