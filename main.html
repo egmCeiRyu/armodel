@@ -1,257 +1,290 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>3D Model Thumbnails</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #0b36aa;
-      color: #ffffff;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .mainpage-container{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      height: 258px;
-      width: 100%;
-      max-width: 675px;
-      /* height: 1081px; ❌ REMOVE this line */
-      margin: 20px auto;
-      padding: 5px;
-      box-shadow: 0 0 35px rgba(0, 0, 0, 0.4);
-      border-radius: 20px;
-      box-sizing: border-box;
-    }
-    
-    .mainpage-title {
-      display: block;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      background-color: #ffffff;
-      height: 16%;
-      width: 75%;
-      max-width: 601px;
-      padding: 10px 15px;
-      margin: 11px auto;
-      border-radius: 10px;
-      font-family: "novecento-sans", sans-serif;
-      text-align: center;
-      color: #898989;
-    }
-    
-    .bubbles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .bubble {
-      position: absolute;
-      bottom: -25px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 50%;
-      opacity: 0.6;
-      animation-name: rise;
-      animation-timing-function:ease-out;
-      animation-iteration-count: infinite;
-    }
-
-    @keyframes rise {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 0;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3D Model Thumbnails</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", sans-serif;
+        background-color: #0b36aa;
+        color: #ffffff;
+        overflow: hidden;
+        position: relative;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center; /* center horizontally */
+        align-items: center; /* center vertically */
       }
-      10% {
-        opacity: 0.7;
+      
+      .page-wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 35vh;
+        background-color: #0b36aa;
+        color: #ffffff;
+        font-family: 'Roboto', sans-serif;
       }
-      100% {
-        transform: translateY(-120vh) scale(1.5);
-        opacity: 0;
-      }
-    }
-
-    .mainpage-container {
-      position: relative;
-      z-index: 1;
-      padding: 3em;
-      text-align: center;
-    }
-
-    .qrcode {
-      width: 120px;
-      margin-top: 1em;
-    }
-
-    @media screen and (max-width: 600px) {
-      .qrcode {
-        display: none;
-      }
-    }
-
-    footer {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 1em;
-      color: #ccc;
-    }
-    
-    .brand {
-      display: inline;
-      color: black;
-    }
-
-    .catalog {
-      display: inline;
-      color: #c1c1c1;
-      text-align: center;
-    }
-
-    .qrcode {
-      width: 53px;
-      height: 60px;
-      margin-top: 10px;
-    }
-    
-    .arword{
-      text-decoration: none;
-      color: aliceblue;
-      display: block;
-      align-content: center;
-      text-align: center;
-    }
-    
-    .armenu-mainpage{
-      padding-bottom: 23px;
-    }
-    
-
-    /* Optional: Center the QR code under text on mobile */
-    @media (max-width: 600px) {
-      .title {
+      
+      #main-content,
+      #qr-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
       }
 
-      .qrcode {
-        margin-top: 0px;
+      .mainpage-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 258px;
+        width: 100%;
+        max-width: 675px;
+        /* height: 1081px; ❌ REMOVE this line */
+        margin: 20px auto;
+        padding: 5px;
+        box-shadow: 0 0 35px rgba(0, 0, 0, 0.4);
+        border-radius: 20px;
+        box-sizing: border-box;
       }
-    }
-    
-    #qr-container {
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.2);
-      max-width: 250px;
-      padding: 20px;
-      margin: 80px auto;
-      font-family: 'Roboto', sans-serif;
-      color: #000;
-    }
-  </style>
-</head>
-  
-  
-<body>
 
-  <div id="qr-container" style="display: none; text-align: center; margin: 40px;">
-    <p>Scan this QR code to view on your mobile:</p>
-    <div id="qrcode"></div>
-  </div>
-  
-  <div class="bubbles" id="bubbles"></div>
-  
-<div id="main-content">
-  <div class="mainpage-container">
-    <div class="mainpage-title">
-      <a class="logo">
-        <span class="brand" >HOSOKAWA </span>
-        <span>MICRON</span>
-        <span class="catalog"> ARカタログ</span>
-      </a>
-      <br>
-      <img class="qrcode" src="qrcode/mainWebsite.png" alt="QR Code">
+      .mainpage-title {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: #ffffff;
+        height: 16%;
+        width: 75%;
+        max-width: 601px;
+        padding: 10px 15px;
+        margin: 11px auto;
+        border-radius: 10px;
+        font-family: "novecento-sans", sans-serif;
+        text-align: center;
+        color: #898989;
+      }
+
+      .bubbles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .bubble {
+        position: absolute;
+        bottom: -25px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        opacity: 0.6;
+        animation-name: rise;
+        animation-timing-function: ease-out;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes rise {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.7;
+        }
+        100% {
+          transform: translateY(-120vh) scale(1.5);
+          opacity: 0;
+        }
+      }
+
+      .mainpage-container {
+        position: relative;
+        z-index: 1;
+        padding: 3em;
+        text-align: center;
+      }
+
+      .qrcode {
+        width: 120px;
+        margin-top: 1em;
+      }
+
+      @media screen and (max-width: 600px) {
+        .qrcode {
+          display: none;
+        }
+      }
+
+      footer {
+        font-style: none;
+        text-decoration: none;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: #fcfcfc;
+        display: block;
+        padding-top: 10px;
+      }
+
+      .brand {
+        display: inline;
+        color: black;
+      }
+
+      .catalog {
+        display: inline;
+        color: #c1c1c1;
+        text-align: center;
+      }
+
+      .qrcode {
+        width: 53px;
+        height: 60px;
+        margin-top: 10px;
+      }
+
+      .arword {
+        text-decoration: none;
+        color: aliceblue;
+        display: block;
+        align-content: center;
+        text-align: center;
+      }
+
+      .armenu-mainpage {
+        padding-bottom: 23px;
+      }
+
+      /* Optional: Center the QR code under text on mobile */
+      @media (max-width: 600px) {
+        .title {
+          flex-direction: column;
+        }
+
+        .qrcode {
+          margin-top: 0px;
+        }
+      }
+
+      #qr-container {
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+        max-width: 205px;
+        padding: 20px;
+        font-family: "Roboto", sans-serif;
+        color: #000;
+        text-align: center;
+      }
+      
+      footer a {
+        color: #ffffff;        /* white text */
+        text-decoration: none; /* removes underline */
+      }
+      
+      footer a:hover {
+        color: #85d8fd;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body>
+      <div class="page-wrapper">
+      <!-- QR container OR main content -->
+      <div id="qr-container" style="display: none;">
+        <p>Scan this QR code to view on your mobile:</p>
+        <div id="qrcode"></div>
+      </div>
+
+    <div class="bubbles" id="bubbles"></div>
+
+    <div id="main-content">
+      <div class="mainpage-container">
+        <div class="mainpage-title">
+          <a class="logo">
+            <span class="brand">HOSOKAWA </span>
+            <span>MICRON</span>
+            <span class="catalog"> ARカタログ</span>
+          </a>
+          <br />
+          <img class="qrcode" src="qrcode/mainWebsite.png" alt="QR Code" />
+        </div>
+      </div>
+
+      <div class="armenu-mainpage">
+        <a class="arword" href="newMenu.html">AR MENU</a>
+      </div>
     </div>
-  </div>
-  
-  <div class="armenu-mainpage">
-      <a class="arword" href="newMenu.html">AR MENU</a>
-  </div>
-</div>
-  
-  <footer>
-    <a href="https://www.hosokawamicron.co.jp/">Hosokawa Micron</a>
-  </footer>
+        
+      <footer>
+        <a href="https://www.hosokawamicron.co.jp/">Hosokawa Micron</a>
+      </footer>
+        
+    </div>
 
-  <script>
-    const bubbleContainer = document.getElementById('bubbles');
+    <script>
+      const bubbleContainer = document.getElementById("bubbles");
 
-    function createBubble() {
-      const bubble = document.createElement('span');
-      bubble.classList.add('bubble');
+      function createBubble() {
+        const bubble = document.createElement("span");
+        bubble.classList.add("bubble");
 
-      // Random size between 10px and 30px
-      const size = Math.random() * 20 + 10;
-      bubble.style.width = `${size}px`;
-      bubble.style.height = `${size}px`;
+        // Random size between 10px and 30px
+        const size = Math.random() * 20 + 10;
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
 
-      // Random horizontal position
-      bubble.style.left = `${Math.random() * 100}%`;
+        // Random horizontal position
+        bubble.style.left = `${Math.random() * 100}%`;
 
-      // Random animation duration between 10s and 20s
-      bubble.style.animationDuration = `${10 + Math.random() * 10}s`;
+        // Random animation duration between 10s and 20s
+        bubble.style.animationDuration = `${10 + Math.random() * 10}s`;
 
-      // Random animation delay
-      bubble.style.animationDelay = `${Math.random() * 5}s`;
+        // Random animation delay
+        bubble.style.animationDelay = `${Math.random() * 5}s`;
 
-      bubbleContainer.appendChild(bubble);
+        bubbleContainer.appendChild(bubble);
 
-      // Remove the bubble after animation ends
-      setTimeout(() => bubble.remove(), 20000);
-    }
+        // Remove the bubble after animation ends
+        setTimeout(() => bubble.remove(), 20000);
+      }
 
-    // Generate new bubbles periodically
-    setInterval(createBubble, 500);
-    
+      // Generate new bubbles periodically
+      setInterval(createBubble, 500);
+
       function isMobileDevice() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  }
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      }
 
-  const qrContainer = document.getElementById('qr-container');
-  const mainContent = document.getElementById('main-content');
+      const qrContainer = document.getElementById("qr-container");
+      const mainContent = document.getElementById("main-content");
 
-  if (!isMobileDevice()) {
-    // Hide the main site on PC
-    mainContent.style.display = 'none';
+      if (!isMobileDevice()) {
+        // Hide the main site on PC
+        mainContent.style.display = "none";
 
-    // Show QR code for mobile access
-    qrContainer.style.display = 'block';
+        // Show QR code for mobile access
+        qrContainer.style.display = "block";
 
-    // Generate QR code with current URL
-    new QRCode(document.getElementById("qrcode"), {
-      text: window.location.href,
-      width: 200,
-      height: 200
-    });
-  }
-    
-  </script>
-
-</body>
+        // Generate QR code with current URL
+        new QRCode(document.getElementById("qrcode"), {
+          text: window.location.href,
+          width: 200,
+          height: 200
+        });
+      }
+    </script>
+  </body>
 </html>
-
-
