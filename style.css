@@ -112,39 +112,6 @@ div.title {
   transition: 0s
 }
 
-/* === AR Button === */
-#ar-button {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 50px;
-    background-color: #000000;
-    color: #ffffff;
-    border: none;
-    font-size: 21px;
-    cursor: pointer;
-    font-family: "novecento-sans", sans-serif;
-}
-
-#ar-button:after {
-  content: "";
-  background: #f1f1f1;
-  display: block;
-  position: absolute;
-  padding-top: 300%;
-  padding-left: 350%;
-  margin-left: -20px !important;
-  margin-top: -120%;
-  opacity: 0;
-  transition: all 0.8s
-}
-
-#ar-button:active:after {
-  padding: 0;
-  margin: 0;
-  opacity: 1;
-  transition: 0s
-}
 
 /* === Return Button === */
 #return-button {
