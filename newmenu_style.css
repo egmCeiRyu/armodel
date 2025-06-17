@@ -8,7 +8,7 @@
       font-family: 'Roboto', sans-serif;
       margin-top: 7px;
       display: inline-block;
-      background-color: #ffffff;
+      background-color: cornflowerblue;
       padding: 6.2px;
       width:120px;
       border-radius: 5px;
@@ -53,6 +53,8 @@
       /* set the border of the choose button*/
       padding: 6px;
       margin: 15px;
+      background-color:cornflowerblue;
+      border-radius: 10px;
     }
     
     .thumbnail-link.selected  {
