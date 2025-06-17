@@ -511,19 +511,25 @@ closeIframeBtn.addEventListener('click', () => {
     modelIframe.src = ""; // Limpa conteúdo do iframe
   });
   
-  const arButton = document.getElementById('ar-button');
+</script>
+  
+<script type="module">
+  const modelViewer = document.getElementById('modelViewer');
   const arOverlay = document.getElementById('arOverlay');
 
-  arButton.addEventListener('click', () => {
-    // Show overlay
+  // Show overlay immediately on AR button click
+  document.getElementById('ar-button').addEventListener('click', () => {
     arOverlay.style.display = 'flex';
-
-    // Hide after 3 seconds (or when AR starts)
-    setTimeout(() => {
-      arOverlay.style.display = 'none';
-    }, 6000);
   });
 
+  // model-viewer triggers this when AR session actually starts
+  modelViewer.addEventListener('ar-status', (event) => {
+    if (event.detail.status === 'session-started') {
+      setTimeout(() => {
+        arOverlay.style.display = 'none';
+      }, 10000); // Keep it for 3 seconds after AR begins
+    }
+  });
 </script>
   
 </body>
