@@ -24,7 +24,7 @@
         max-width: 601px;
         /* height: 1081px; ❌ REMOVE this line */
         margin: auto;
-        padding: 14px;
+        padding: 0px;
         box-sizing: border-box;
     }
     
