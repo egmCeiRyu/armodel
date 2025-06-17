@@ -127,22 +127,28 @@
     } 
       
       
-    #closeIframeBtn{
-      position: absolute; 
+    #closeIframeBtn {
+      position: absolute;
       top: -27px;
-      right: 10px; 
-      z-index: 10; 
-      background: #ff5f57; 
-      color: #ffffff; 
-      border: none; 
-      border-radius: 50%; 
-      width: 40px; 
-      height: 40px; 
-      font-weight: bold; 
+      right: 10px;
+      z-index: 10;
+      background: #ff5f57;
+      color: #ffffff;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-weight: bold;
       cursor: pointer;
-      border:solid #002476;
+      border: solid #002476;
       font-size: 19px;
-      align-content: center;
+
+      /* Center the "×" icon inside the button */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      line-height: 1;
     }
       
     #iframeWrapper{
