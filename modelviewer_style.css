@@ -205,6 +205,19 @@ model-viewer {
   }
 }
 
+@media (max-width: 600px) {
+    .mainpage-container {
+        width: 90%;
+        height: auto;
+    }
+
+    .return, .specification {
+        top: 5%;
+        width: 35px;
+        height: 35px;
+    }
+}
+
 
 .return, .specification {
     position: absolute;  
