@@ -40,8 +40,8 @@
     }
 
     .close-spec {
-      margin-top: 20px;
-      padding: 10px 20px;
+      margin-top: 51px;
+      padding: 20px 41px;
       background: #ffffff22;
       border: 1px solid #ccc;
       border-radius: 5px;
@@ -168,6 +168,7 @@
   <div class="spec-overlay" id="specOverlay">
     <h2>製品仕様</h2>
     <p>素材などの情報として、さまざまな情報を入手できます。</p>
+    <a id="modelLink" href="#" target="_blank" style="color: #1e90ff; text-decoration: underline;">詳しくはこちら</a>
     <button class="close-spec" id="closeSpec">戻る</button>
   </div>
 
@@ -185,42 +186,52 @@
     model1: {
       title: "Model1",
       description: "木製フレームと布張りの座面を備えたモダンなデザインの椅子。軽量で耐久性があります。",
+      link:"https://www.hosokawamicron.co.jp/en/product/machines/detail/167.html?page=1",
     },
     model2: {
       title: "Model2",
       description: "ガラス天板と金属脚を備えたスタイリッシュなダイニングテーブル。最大6人まで対応可能。",
+      link:"https://www.hosokawamicron.co.jp/en/product/machines/detail/168.html?page=1",
     },
     model3: {
       title: "Model3",
       description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+      link:"https://www.hosokawamicron.co.jp/en/product/machines/detail/167.html?page=1",
     },
     model4: {
       title: "Model4",
       description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+      link:"https://www.hosokawamicron.co.jp/en/product/machines/detail/167.html?page=1",
     },
     model5: {
       title: "Model5",
       description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+      link:"https://www.hosokawamicron.co.jp/en/product/machines/detail/167.html?page=1",
     },
     model6: {
       title: "Model6",
       description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+      link:"https://www.hosokawamicron.co.jp/en/product/machines/detail/167.html?page=1",
     },
     model7: {
       title: "Model7",
       description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+      link:"https://www.hosokawamicron.co.jp/en/product/machines/detail/167.html?page=1",
     },
     model8: {
       title: "Model8",
       description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+      link:"https://www.hosokawamicron.co.jp/en/product/machines/detail/167.html?page=1",
     },
     model9: {
       title: "Model9",
       description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+      link:"https://www.hosokawamicron.co.jp/en/product/machines/detail/167.html?page=1",
     },
     model10: {
       title: "Model10",
       description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
+      link:"https://www.hosokawamicron.co.jp/en/product/machines/detail/167.html?page=1",
     },
     // Adicione mais conforme necessário
   };
@@ -238,9 +249,18 @@
       const spec = modelSpecs[modelKey];
       specOverlay.querySelector('h2').textContent = spec.title;
       specOverlay.querySelector('p').textContent = spec.description;
+      
+    const modelLink = document.getElementById('modelLink');
+      if (spec.link) {
+        modelLink.href = spec.link;
+        modelLink.style.display = 'inline';
+      } else {
+        modelLink.style.display = 'none'; // Hide if no link
+  }
     } else {
       specOverlay.querySelector('h2').textContent = "仕様情報がありません";
       specOverlay.querySelector('p').textContent = "このモデルの仕様はまだ登録されていません。";
+      document.getElementById('modelLink').style.display = 'none';
     }
   }
 
