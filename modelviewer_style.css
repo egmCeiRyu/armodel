@@ -22,20 +22,20 @@ body {
 }
 
 .mainpage-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  background-color: #ffffff;
-    height: 21%;
-  width: 75%;
-  max-width: 601px;
-  padding: 10px 15px;
-  margin: 11px auto;
-  border-radius: 10px;
-  font-family: "novecento-sans", sans-serif;
-  text-align: center;
-  color: #898989;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+      height: 21%;
+    width: 75%;
+    max-width: 601px;
+    padding: 10px 15px;
+    margin: 11px auto;
+    border-radius: 10px;
+    font-family: "novecento-sans", sans-serif;
+    text-align: center;
+    color: #898989;
 }
 
 .armenu-mainpage{
@@ -63,23 +63,23 @@ div.title {
 }
 
 .specification :after {
-  content: "";
-  background: #f1f1f1;
-  display: block;
-  position: absolute;
-  padding-top: 300%;
-  padding-left: 350%;
-  margin-left: -20px !important;
-  margin-top: -120%;
-  opacity: 0;
-  transition: all 0.8s
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
 }
 
 .specification :active:after {
-   padding: 0;
-   margin: 0;
-   opacity: 1;
-   transition: 0s
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
 }
 
 .return {
@@ -106,10 +106,10 @@ div.title {
 }
 
 .return:active:after {
-  padding: 0;
-  margin: 0;
-  opacity: 1;
-  transition: 0s
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
 }
 
 
@@ -229,7 +229,7 @@ model-viewer {
 #ar-button {
     position: absolute;
     right: 6%;
-    bottom: 85px;
+    bottom: 135px;
     background-color: #000000;
     color: #ffffff;
     border: none;
