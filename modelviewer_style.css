@@ -187,32 +187,6 @@ model-viewer {
     background-color: #e7e7e7;
 }
 
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  background-color: #ffffff;
-  width: 80%;
-  max-width: 601px;
-  padding: 10px 15px;
-  margin: 11px auto;
-  border-radius: 10px;
-  font-family: "novecento-sans", sans-serif;
-  text-align: center;
-  color: #898989;
-}
-
-
-.brand {
-  display: inline;
-  color: black;
-}
-
-.catalog {
-  display: block;
-  color: #898989;
-}
 
 .qrcode {
   width: 53px;

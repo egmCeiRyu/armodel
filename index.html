@@ -10,33 +10,60 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #f0f0f0;
+      background-color: #0b36aa;
       font-family: sans-serif;
       font-size: 2em;
       text-align: center;
     }
+    
+    .message{
+      align-content: center;
+      height: 527px;
+      background-color: cornflowerblue;
+      margin: auto;
+      width:100%;
+    }
+    
+    .text{
+      width:410px;
+      margin: auto;
+    }
+    
+    .text p{
+      align-items: center;
+      text-align: center;
+    }
+    
   </style>
+  
   <script>
     // URL to redirect to
     const targetURL = "main.html";
 
-    // Redirect after 3 seconds
+    //Redirect after 3 seconds
     window.onload = () => {
       setTimeout(() => {
         window.location.href = targetURL;
-      }, 3000);
+      }, 5000);
     };
 
     // Redirect on tap/click
     document.addEventListener("click", () => {
       window.location.href = targetURL;
     });
+    
     document.addEventListener("touchstart", () => {
       window.location.href = targetURL;
     });
+    
   </script>
 </head>
+  
 <body>
-  <div>Hosokawa Micron! Redirecting...</div>
+  <div class="message">
+    <div class="text">
+      <p>Hosokawa Micron! Redirecting...</p>
+    </div>
+  </div>
 </body>
 </html>

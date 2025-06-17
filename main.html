@@ -84,19 +84,19 @@
       const qrContainer = document.getElementById("qr-container");
       const mainContent = document.getElementById("main-content");
 
-      if (!isMobileDevice()) {
-        // Hide the main site on PC
-        mainContent.style.display = "none";
-
-        // Show QR code for mobile access
-        qrContainer.style.display = "block";
-
-        // Generate QR code with current URL
-        new QRCode(document.getElementById("qrcode"), {
-          text: window.location.href,
-          width: 200,
-          height: 200
-        });
+      //if (!isMobileDevice()) {
+      //  // Hide the main site on PC
+      //  mainContent.style.display = "none";
+//
+      //  // Show QR code for mobile access
+      //  qrContainer.style.display = "block";
+//
+      //  //// Generate QR code with current URL
+      //  //new QRCode(document.getElementById("qrcode"), {
+      //  //  text: window.location.href,
+      //  //  width: 200,
+      //  //  height: 200
+      //  //});
       }
     </script>
   </body>
