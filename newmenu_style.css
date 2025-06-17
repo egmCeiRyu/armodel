@@ -49,7 +49,9 @@
       display: inline-block;
       text-align: center;
       transition: border 0.2s, box-shadow 0.2s;
-      padding: 18px;
+      /* set the border of the choose button*/
+      padding: 6px;
+      margin: 15px;
     }
     
     .thumbnail-link.selected  {
@@ -104,27 +106,27 @@
       box-sizing: border-box;
     }
     
-  .title {
-    background-color: #4585ff;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 601px;
-    font-family: "novecento-sans", sans-serif;
-    color: #e0e0e0;
-    margin:auto;
-    width: auto;
-}
-
-  .brand {
-      display: inline;
-      color: black;
-  }
-
-  .catalog {
-      display: block;
+    .title {
+      background-color: #4585ff;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 601px;
+      font-family: "novecento-sans", sans-serif;
       color: #e0e0e0;
-      font-size: 27px;
-  }
+      margin:auto;
+      width: auto;
+    }
+
+    .brand {
+        display: inline;
+        color: black;
+    }
+
+    .catalog {
+        display: block;
+        color: #e0e0e0;
+        font-size: 27px;
+    }
