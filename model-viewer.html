@@ -177,8 +177,15 @@
 </head>
 
 <body>
-<model-viewer ar id="modelViewer" shadow-intensity="1" camera-controls touch-action="pan-y" shadow-softness="1"
-    camera-orbit="-25deg 75deg 200m" scale="1 1 1" ar-modes="webxr scene-viewer quick-look" >
+<model-viewer ar id="modelViewer"
+  shadow-intensity="1"
+  shadow-softness="1"
+  camera-controls
+  touch-action="pan-y"
+  camera-orbit="-25deg 75deg auto"
+  scale="1 1 1"
+  ar-modes="webxr scene-viewer quick-look">
+  
                   <button style="background-color:rgb(0,0,0)" slot="hotspot-dot+X-Y+Z" class="dot" data-position="1 -1 1" data-normal="1 0 0"></button>
                   <button slot="hotspot-dim+X-Y" class="dim" data-position="1 -1 0" data-normal="1 0 0"></button>
                   <button style="background-color:rgb(0,0,0)" slot="hotspot-dot+X-Y-Z" class="dot" data-position="1 -1 -1" data-normal="1 0 0"></button>
@@ -428,6 +435,23 @@
     }
   }
 });
+  </script>
+  
+  <script>
+    const modelViewer = document.getElementById('modelViewer');
+
+    modelViewer.addEventListener('load', () => {
+      // Get the model's bounding box dimensions
+      const size = modelViewer.model.boundingBox.max.subtract(modelViewer.model.boundingBox.min);
+      const maxDimension = Math.max(size.x, size.y, size.z);
+
+      // Set maxCameraOrbit based on model size
+      const maxRadius = maxDimension * 5; // Adjust multiplier to control how far you want max zoom
+      modelViewer.maxCameraOrbit = `auto auto ${maxRadius}m`;
+
+      // Optional: zoom out to a nice default starting view
+      modelViewer.cameraOrbit = `0deg 75deg ${maxRadius * 0.75}m`;
+    });
   </script>
 </body>
 </html>
