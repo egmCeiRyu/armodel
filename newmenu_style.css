@@ -50,7 +50,7 @@
       text-align: center;
       transition: border 0.2s, box-shadow 0.2s;
       /* set the border of the choose button*/
-      padding: 6px;
+      padding: 2px;
       margin: 15px;
     }
     
