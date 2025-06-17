@@ -166,13 +166,29 @@
       margin-top: -50px;
     }
       
-         
+    .ar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7); /* dark transparent */
+      color: white;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      z-index: 999999; /* VERY HIGH to override WebGL and Shadow DOM */
+      text-align: center;
+      pointer-events: none; /* optional: let clicks pass through */
+    }  
 
       
   </style>
 </head>
 
 <body>
+  
 <model-viewer ar id="modelViewer"
   shadow-intensity="1"
   shadow-softness="1"
@@ -210,6 +226,10 @@
 
     <button id="ar-button" slot="ar-button">AR</button>
   </model-viewer>
+  
+  <div id="arOverlay" class="ar-overlay">
+    <p>Loading AR experience...</p>
+  </div>
 
   <!-- Sobreposição de especificações -->
   <div class="spec-overlay" id="specOverlay">
@@ -481,9 +501,29 @@ closeIframeBtn.addEventListener('click', () => {
       if (arButtons && arButtons.length > 1) {
         for (let i = 1; i < arButtons.length; i++) {
           arButtons[i].remove();
+      }
     }
-  }
-});
+  });
+  
+    closeSpec.addEventListener('click', () => {
+    specOverlay.style.display = 'none';
+    iframeWrapper.style.display = 'none'; // Esconde iframe ao fechar
+    modelIframe.src = ""; // Limpa conteúdo do iframe
+  });
+  
+  const arButton = document.getElementById('ar-button');
+  const arOverlay = document.getElementById('arOverlay');
+
+  arButton.addEventListener('click', () => {
+    // Show overlay
+    arOverlay.style.display = 'flex';
+
+    // Hide after 3 seconds (or when AR starts)
+    setTimeout(() => {
+      arOverlay.style.display = 'none';
+    }, 4000);
+  });
+
 </script>
   
 </body>
