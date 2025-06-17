@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="https://use.typekit.net/zfi8dmc.css">
   <style>
     
-    
-    
     .return, .specification {
       position: absolute;  
       cursor: pointer;
@@ -438,19 +436,17 @@
   </script>
   
   <script>
-    const modelViewer = document.getElementById('modelViewer');
+    const viewer = document.getElementById('modelViewer');
 
-    modelViewer.addEventListener('load', () => {
-      // Get the model's bounding box dimensions
-      const size = modelViewer.model.boundingBox.max.subtract(modelViewer.model.boundingBox.min);
-      const maxDimension = Math.max(size.x, size.y, size.z);
+    viewer.addEventListener('load', () => {
+      const size = viewer.model.boundingBox.max.subtract(viewer.model.boundingBox.min);
+      const maxDim = Math.max(size.x, size.y, size.z);
 
-      // Set maxCameraOrbit based on model size
-      const maxRadius = maxDimension * 5; // Adjust multiplier to control how far you want max zoom
-      modelViewer.maxCameraOrbit = `auto auto ${maxRadius}m`;
+      const minRadius = maxDim * 0.5;
+      const maxRadius = maxDim * 5;
 
-      // Optional: zoom out to a nice default starting view
-      modelViewer.cameraOrbit = `0deg 75deg ${maxRadius * 0.75}m`;
+      viewer.minCameraOrbit = `auto auto ${minRadius}m`;
+      viewer.maxCameraOrbit = `auto auto ${maxRadius}m`;
     });
   </script>
 </body>
