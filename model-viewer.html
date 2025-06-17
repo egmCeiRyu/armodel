@@ -518,6 +518,13 @@ closeIframeBtn.addEventListener('click', () => {
   const arOverlay = document.getElementById('arOverlay');
 
   let arJustStarted = false;
+  let arTimeout = null;
+
+  function startAR() {
+    arOverlay.style.display = 'none';
+    arJustStarted = false;
+    arButton.click(); // Trigger AR mode
+  }
 
   arButton.addEventListener('click', (event) => {
     if (!arJustStarted) {
@@ -527,20 +534,28 @@ closeIframeBtn.addEventListener('click', () => {
       arOverlay.style.display = 'flex';
       arJustStarted = true;
 
-      setTimeout(() => {
-        arOverlay.style.display = 'none';
-        arButton.click(); // Trigger real AR after delay
-      }, 10000);
+      arTimeout = setTimeout(() => {
+        startAR();
+      }, 3000);
     } else {
-      arJustStarted = false; // Reset for future AR sessions
+      arJustStarted = false; // Reset if somehow double triggered
     }
   });
 
-  // Optional: Hide overlay if AR session is manually ended early
+  // ▶️ Allow user to click the overlay to skip wait and start AR immediately
+  arOverlay.addEventListener('click', () => {
+    if (arJustStarted) {
+      clearTimeout(arTimeout);
+      startAR();
+    }
+  });
+
+  // ❌ Hide overlay if AR session exits
   modelViewer.addEventListener('ar-status', (event) => {
     if (event.detail.status === 'not-presenting') {
       arOverlay.style.display = 'none';
       arJustStarted = false;
+      clearTimeout(arTimeout);
     }
   });
 </script>
