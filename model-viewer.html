@@ -512,9 +512,11 @@ closeIframeBtn.addEventListener('click', () => {
   });
   
 </script>
+  
+  
 <script type="module">
   const modelViewer = document.getElementById('modelViewer');
-  const arButton = modelViewer.querySelector('#ar-button');
+  const arButton = document.querySelector('#ar-button'); // your visible AR button
   const arOverlay = document.getElementById('arOverlay');
 
   let arJustStarted = false;
@@ -523,9 +525,12 @@ closeIframeBtn.addEventListener('click', () => {
   function startAR() {
     arOverlay.style.display = 'none';
     arJustStarted = false;
-    arButton.click(); // Trigger AR mode
+
+    // ✅ This is the correct way to trigger AR programmatically
+    modelViewer.activateAR();
   }
 
+  // When the user taps the AR button
   arButton.addEventListener('click', (event) => {
     if (!arJustStarted) {
       event.preventDefault();
@@ -536,13 +541,11 @@ closeIframeBtn.addEventListener('click', () => {
 
       arTimeout = setTimeout(() => {
         startAR();
-      }, 3000);
-    } else {
-      arJustStarted = false; // Reset if somehow double triggered
+      }, 5000);
     }
   });
 
-  // ▶️ Allow user to click the overlay to skip wait and start AR immediately
+  // When the user taps the overlay
   arOverlay.addEventListener('click', () => {
     if (arJustStarted) {
       clearTimeout(arTimeout);
@@ -550,7 +553,7 @@ closeIframeBtn.addEventListener('click', () => {
     }
   });
 
-  // ❌ Hide overlay if AR session exits
+  // When exiting AR mode
   modelViewer.addEventListener('ar-status', (event) => {
     if (event.detail.status === 'not-presenting') {
       arOverlay.style.display = 'none';
@@ -559,6 +562,7 @@ closeIframeBtn.addEventListener('click', () => {
     }
   });
 </script>
+
 
 </body>
 </html>
