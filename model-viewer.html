@@ -512,26 +512,39 @@ closeIframeBtn.addEventListener('click', () => {
   });
   
 </script>
-  
 <script type="module">
   const modelViewer = document.getElementById('modelViewer');
+  const arButton = modelViewer.querySelector('#ar-button');
   const arOverlay = document.getElementById('arOverlay');
 
-  // Show overlay immediately on AR button click
-  document.getElementById('ar-button').addEventListener('click', () => {
-    arOverlay.style.display = 'flex';
-  });
+  let arJustStarted = false;
 
-  // model-viewer triggers this when AR session actually starts
-  modelViewer.addEventListener('ar-status', (event) => {
-    if (event.detail.status === 'session-started') {
+  arButton.addEventListener('click', (event) => {
+    if (!arJustStarted) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      arOverlay.style.display = 'flex';
+      arJustStarted = true;
+
       setTimeout(() => {
         arOverlay.style.display = 'none';
-      }, 10000); // Keep it for 3 seconds after AR begins
+        arButton.click(); // Trigger real AR after delay
+      }, 10000);
+    } else {
+      arJustStarted = false; // Reset for future AR sessions
+    }
+  });
+
+  // Optional: Hide overlay if AR session is manually ended early
+  modelViewer.addEventListener('ar-status', (event) => {
+    if (event.detail.status === 'not-presenting') {
+      arOverlay.style.display = 'none';
+      arJustStarted = false;
     }
   });
 </script>
-  
+
 </body>
 </html>
 
