@@ -126,6 +126,32 @@
       display: none;
     } 
       
+      
+    #closeIframeBtn{
+      position: absolute; 
+      top: -28px;
+      right: 10px; 
+      z-index: 10; 
+      background: #ff5f57; 
+      color: #ffffff; 
+      border: none; 
+      border-radius: 50%; 
+      width: 40px; 
+      height: 40px; 
+      font-weight: bold; 
+      cursor: pointer;
+      border:solid #002476;
+      font-size: 30px;
+    }
+      
+    #iframeWrapper{
+      display: none;
+      position: relative; 
+      width: 100%; 
+      max-width: 800px; 
+      margin: 20px auto;  
+    }
+      
          
 
       
@@ -177,9 +203,8 @@
     <p>素材などの情報として、さまざまな情報を入手できます。</p>
     <a id="modelLink" href="#" target="_blank">製品仕様</a>
     
-<div id="iframeWrapper" style="display: none; position: relative; width: 100%; max-width: 800px; margin: 20px auto;">
-  <button id="closeIframeBtn" 
-          style="position: absolute; top: -28px; right: 10px; z-index: 10; background: #ff5f57; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-weight: bold; cursor: pointer;">
+<div id="iframeWrapper">
+  <button id="closeIframeBtn">
     ×
   </button>
 
@@ -189,7 +214,8 @@
           height="400"
           style="background-color: white; border: 1px solid #ccc; border-radius: 8px;">
   </iframe>
-</div>
+  
+  </div>
     <button class="close-spec" id="closeSpec">戻る</button>
   </div>
 
