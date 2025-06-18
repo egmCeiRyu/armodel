@@ -118,8 +118,8 @@
       
     #closeIframeBtn {
       position: absolute;
-      top: -77px;
-      right: 10px;
+      top: -72px;
+      right: -7px;
       z-index: 10;
       background: #ff5f57;
       color: #ffffff;
@@ -151,7 +151,7 @@
     iframe{
       position: relative;
       align-content: center;
-      margin-top: -55px;
+      margin-top: -57px;
     }
       
       
@@ -388,6 +388,15 @@
         height: auto;
         text-align: center;
         color: aliceblue
+    }
+
+    #modelIframe {
+      width: 85vw;   /* 90% of viewport width */
+      height: 54vh;  /* 60% of viewport height */
+      max-width: 482px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
     }
 
     @media (max-width: 600px) {
