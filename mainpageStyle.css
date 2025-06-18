@@ -7,7 +7,6 @@
         overflow: hidden;
         position: relative;
         height: 100%;
-        display: flex;
         justify-content: center; /* center horizontally */
         align-items: center; /* center vertically */
       }
@@ -15,7 +14,6 @@
       .page-wrapper {
         display: flex;
         flex-direction: column;
-        min-height: 35vh;
         background-color: #0b36aa;
         color: #ffffff;
         font-family: 'Roboto', sans-serif;
@@ -23,43 +21,22 @@
       
       #main-content,
       #qr-container {
-        flex: 1;
-        display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-      }
-
-      .mainpage-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        height: 258px;
-        width: 100%;
-        max-width: 675px;
-        /* height: 1081px; ❌ REMOVE this line */
-        margin: 20px auto;
-        padding: 5px;
-        box-shadow: 0 0 35px rgba(0, 0, 0, 0.4);
-        border-radius: 20px;
-        box-sizing: border-box;
       }
 
       .mainpage-title {
-        display: block;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
         flex-wrap: wrap;
         background-color: #ffffff;
-        height: 28%;
-        width: 100%;
-        max-width: 601px;
-        padding: 10px 15px;
-        margin: 11px auto;
+        width: 73%;
         border-radius: 10px;
         font-family: "novecento-sans", sans-serif;
         text-align: center;
         color: #898989;
+        margin: auto;
+        height: 160px;
       }
 
       .bubbles {
@@ -110,22 +87,6 @@
         margin-top: 1em;
       }
 
-      @media screen and (max-width: 600px) and (orientation: landscape) {
-        .qrcode {
-          display: none;
-        }
-      }
-
-      footer {
-        font-style: none;
-        text-decoration: none;
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        color: #fcfcfc;
-        display: block;
-        padding-top: 10px;
-      }
 
       .brand {
         display: inline;
@@ -146,26 +107,32 @@
 
       .arword {
         text-decoration: none;
-        color: aliceblue;
+        color: #ffffff;
         display: block;
         align-content: center;
-        text-align: center;
+        text-align: center; 
+        background-color: black;
+        width:89px;
+        margin: auto;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .arword a:hover{
+        color: #1311f1;
       }
 
       .armenu-mainpage {
-        padding-bottom: 23px;
+        color: white;
       }
 
-      /* Optional: Center the QR code under text on mobile */
-      @media (max-width: 600px) {
-      .title {
-          flex-direction: column;
+      .armenu-mainpage:hover {
+        color: #006d9d;
       }
 
       .qrcode {
           margin-top: 0px;
         }
-      }
 
       #qr-container {
         background: #ffffff;
@@ -184,6 +151,20 @@
         margin-top:0px;
         font-size: 15px;
       }
+
+
+      footer {
+        top: 583px;
+        position: absolute;
+        text-decoration: none;
+        z-index: 1;
+        text-align: center;
+        color: #fcfcfc;
+        display: block;
+        padding: 10px 0px;
+        background-color: #85d8fd;
+        width: 100%;
+      }
       
       footer a {
         color: #ffffff;        /* white text */
@@ -191,9 +172,10 @@
       }
       
       footer a:hover {
-        color: #85d8fd;
+        color: #006d9d;
         text-decoration: none;
       }
+
       
       .brand-line {
         white-space: nowrap; /* prevent line break */
@@ -212,14 +194,31 @@
         width:200px;
         height: 200px;
       }
-@media screen and (max-width: 600px) and (orientation: landscape) {
-      #qr-container{
-        top:2px;
-        margin-bottom: 59px;
-        padding: 0px;
+
+      #hosokawalogo{
+        height: 120px;
+        width: 180px;
       }
-      .qrcode{
-        display: none;
+
+      @media screen and (max-width: 600px) and (orientation: landscape) {
+              #qr-container{
+                top:10px;
+              }
+              .qrcode{
+                display: none;
+              }
       }
-}
+
+      @media screen and (max-width: 600px) and (orientation: landscape) {
+        .qrcode {
+          display: none;
+        }
+      }
+
+      @media screen and (orientation: landscape){
+        
+      }
+
+
+
 
