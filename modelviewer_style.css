@@ -444,7 +444,7 @@
         }
     }
 
-    @media screen and (max-width: 812px) and (orientation: landscape) {
+    @media screen and (max-width: 600px) and (orientation: landscape) {
       .ar-overlay {
         display: none;
       } 
@@ -455,7 +455,7 @@
       }
     }
 
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 600px) {
       .dim {
         font-size: 3vw;
       }
