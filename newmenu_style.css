@@ -23,10 +23,11 @@
         justify-items: center;
         background-color: #0c3879;
         width: 100%;
-        max-width: 432px;
+        max-width: 493px;
         margin: auto;
         padding: 16px 8px;
         box-sizing: border-box;
+
     }
     
     /* === Thumbnail Image === */
@@ -92,7 +93,6 @@
     .foot {
       background-color: #4585ff;
       width: 100%;
-      max-width: 660px;
       height: 82px;
       text-align: center;
       margin: 0 auto;         /* centraliza como o container */
