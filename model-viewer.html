@@ -30,8 +30,9 @@
       
     @media (max-width: 600px) {
         .spec-overlay {
-        padding: 40px 20px;
-        font-size: 1rem;
+          padding: 40px 20px;
+          font-size: 1rem;
+        }
     }
 
     .spec-overlay h2 {
@@ -197,10 +198,20 @@
     }
       
     @media screen and (max-width: 812px) and (orientation: landscape) {
-    .arOverlay {
+      .ar-overlay {
         display: none;
+      }    
     }
+    
+    @media screen and (max-width: 600px) and (orientation: landscape) {
+    #ar-button {
+      bottom: 12px;
+      right: 12px;
+      font-size: 14px;
+      padding: 8px 14px;
+  }
 }
+
 
       
   </style>
@@ -244,6 +255,7 @@
     <img class="specification" src="icon/information.png" alt="specification" id="specButton">
 
     <button id="ar-button" slot="ar-button">AR</button>
+  
   </model-viewer>
   
   <div id="arOverlay" class="ar-overlay">
@@ -355,9 +367,9 @@
       specOverlay.querySelector('h2').textContent = spec.title;
       specOverlay.querySelector('p').textContent = spec.description;
       
-const modelLink = document.getElementById('modelLink');
-const iframeWrapper = document.getElementById('iframeWrapper');
-const modelIframe = document.getElementById('modelIframe');
+  const modelLink = document.getElementById('modelLink');
+  const iframeWrapper = document.getElementById('iframeWrapper');
+  const modelIframe = document.getElementById('modelIframe');
 
 // Define o comportamento do link e iframe
 if (spec.link) {
@@ -405,7 +417,6 @@ closeIframeBtn.addEventListener('click', () => {
 
 
   const dimElements = [...modelViewer.querySelectorAll('button'), modelViewer.querySelector('#dimLines')];
-
 
     // update svg
     function drawLine(svgLine, dotHotspot1, dotHotspot2, dimensionHotspot) {

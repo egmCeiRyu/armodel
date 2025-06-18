@@ -241,7 +241,7 @@ model-viewer {
 /* === AR Button === */
 #ar-button {
     position: absolute;
-    right: 6%;
+    right: 8%;
     bottom: 135px;
     background-color: #000000;
     color: #ffffff;
