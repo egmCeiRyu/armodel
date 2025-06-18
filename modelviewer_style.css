@@ -414,6 +414,10 @@
     }
 
     @media screen and (orientation: landscape) {
+        .return{
+         top: 7%;
+        }
+        
         #ar-button {
           position: absolute;
           bottom: 35px; 
