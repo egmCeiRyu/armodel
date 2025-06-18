@@ -14,6 +14,7 @@
       width:120px;
       border-radius: 5px;
       font-size: 13px;
+      
     }
 
     .thumbnail-container {
@@ -27,6 +28,7 @@
         margin: auto;
         padding: 16px 8px;
         box-sizing: border-box;
+
 
     }
     
@@ -56,6 +58,7 @@
       margin: 15px;
       background-color:cornflowerblue;
       border-radius: 10px;
+      box-shadow: 0 0 35px rgba(0, 0, 0, 0.4);
     }
     
     .thumbnail-link.selected  {
@@ -83,11 +86,12 @@
 
 
     .logo {
-      font-size: 28px;
+      font-size: 36px;
       padding: 15px;
       font-family: 'Roboto', sans-serif;
       font-weight: bold;
       text-align: center;
+      
     }
 
     .foot {
@@ -96,7 +100,6 @@
       height: 82px;
       text-align: center;
       margin: 0 auto;         /* centraliza como o container */
-      box-shadow: 0 0 35px rgba(0, 0, 0, 0.4); /* opcional: mesmo estilo do container */
       box-sizing: border-box;
     }
     
