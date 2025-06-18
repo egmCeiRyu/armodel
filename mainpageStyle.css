@@ -110,7 +110,7 @@
         margin-top: 1em;
       }
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 600px) and (orientation: landscape) {
         .qrcode {
           display: none;
         }
@@ -158,9 +158,9 @@
 
       /* Optional: Center the QR code under text on mobile */
       @media (max-width: 600px) {
-        .title {
+      .title {
           flex-direction: column;
-        }
+      }
 
       .qrcode {
           margin-top: 0px;
@@ -212,4 +212,14 @@
         width:200px;
         height: 200px;
       }
+@media screen and (max-width: 600px) and (orientation: landscape) {
+      #qr-container{
+        top:2px;
+        margin-bottom: 59px;
+        padding: 0px;
+      }
+      .qrcode{
+        display: none;
+      }
+}
 

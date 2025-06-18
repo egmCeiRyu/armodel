@@ -9,7 +9,7 @@
   </head>
 
   <body>
-      <div class="page-wrapper">
+    <div class="page-wrapper">
       <!-- QR container OR main content -->
       <div id="qr-container" style="display: none;">
         <p>このQRコードをスキャンしてモバイルでご覧ください：</p>
@@ -31,8 +31,6 @@
             <br>
             <span class="catalog">ARカタログ</span>
           </a>
-          <br />
-          <img class="qrcode" src="qrcode/mainWebsite.png" alt="QR Code" />
         </div>
       </div>
       
@@ -84,20 +82,20 @@
       const qrContainer = document.getElementById("qr-container");
       const mainContent = document.getElementById("main-content");
 
-      if (!isMobileDevice()) {
-       // Hide the main site on PC
-        mainContent.style.display = "none";
-
-        // Show QR code for mobile access
-        qrContainer.style.display = "block";
-
-         //Generate QR code with current URL
-        new QRCode(document.getElementById("qrcode"), {
-          text: window.location.href,
-          width: 200,
-          height: 200
-        });
-      }
+      //if (!isMobileDevice()) {
+      // // Hide the main site on PC
+      //  mainContent.style.display = "none";
+//
+      //  // Show QR code for mobile access
+      //  qrContainer.style.display = "block";
+//
+      //   //Generate QR code with current URL
+      //  new QRCode(document.getElementById("qrcode"), {
+      //    text: window.location.href,
+      //    width: 200,
+      //    height: 200
+      //  });
+      //}
     </script>
   </body>
 </html>
