@@ -430,6 +430,21 @@
           width: 400px;
           height: 284px;
         }
+        #closeIframeBtn{
+          position: absolute;
+          top: -83px;
+          right: 24px;
+          z-index: 10;
+          background: #ff5f57;
+          color: #ffffff;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          font-weight: bold;
+          cursor: pointer;
+          border: solid #002476;
+          font-size: 19px;
+        }
 
     }
      
@@ -457,11 +472,7 @@
       .ar-overlay {
         display: none;
       } 
-      
-      #closeIframeBtn{
-          top: 19px;
-          left: 14px;
-      }
+    
     }
 
     @media only screen and (max-width: 600px) {
