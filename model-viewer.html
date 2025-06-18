@@ -38,13 +38,6 @@
                       <line class="dimensionLine"></line>
                     </svg>
       <!-- Botão voltar -->
-      <a href="newMenu.html">
-        <img class="return" src="icon/backward.png" alt="return">
-      </a>
-
-      <!-- Botão especificações -->
-      <img class="specification" src="icon/information.png" alt="specification" id="specButton">
-
       <img id="ar-button" src="icon/ARIcon.png" slot="ar-button" alt="arbtn">
       <!--
       <div id="controls" class="dim glass">
@@ -52,9 +45,19 @@
         <input id="show-dimensions" type="checkbox" checked="true">
       </div>
       -->
-
     </model-viewer>
+    <div id="buttonsGRP">
+      <a href="newMenu.html">
+        <img class="return" src="icon/backward.png" alt="return">
+      </a>
 
+      <!-- Botão especificações -->
+      <img class="specification" src="icon/information.png" alt="specification" id="specButton">
+
+      
+    </div>
+  
+  
     <div id="arOverlay" class="ar-overlay">
       <div class="loadingText">
          <p>Loading AR experience...</p>
@@ -70,21 +73,21 @@
       <p>素材などの情報として、さまざまな情報を入手できます。</p>
       <a id="modelLink" href="#" target="_blank">製品仕様</a> 
 
-    <div id="iframeWrapper">
-      <button id="closeIframeBtn">
-        ×
-      </button>
+        <div id="iframeWrapper">
+          <button id="closeIframeBtn">
+            ×
+          </button>
 
-      <iframe  title="model"
-              id="modelIframe">
-      </iframe>
+          <iframe  title="model"
+                  id="modelIframe">
+          </iframe>
 
-    </div>
+        </div>
       
-    <button class="close-spec" id="closeSpec">戻る</button>
+      <button class="close-spec" id="closeSpec">戻る</button>
     
     </div>
-
+  
     <script type="module">
       const urlParams = new URLSearchParams(window.location.search);
       const modelUrl = urlParams.get('model');
