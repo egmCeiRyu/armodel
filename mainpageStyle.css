@@ -151,32 +151,7 @@
         margin-top:0px;
         font-size: 15px;
       }
-
-
-      footer {
-        top: 583px;
-        position: absolute;
-        text-decoration: none;
-        z-index: 1;
-        text-align: center;
-        color: #fcfcfc;
-        display: block;
-        padding: 10px 0px;
-        background-color: #85d8fd;
-        width: 100%;
-      }
-      
-      footer a {
-        color: #ffffff;        /* white text */
-        text-decoration: none; /* removes underline */
-      }
-      
-      footer a:hover {
-        color: #006d9d;
-        text-decoration: none;
-      }
-
-      
+ 
       .brand-line {
         white-space: nowrap; /* prevent line break */
         display: inline-block;
