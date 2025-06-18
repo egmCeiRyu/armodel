@@ -283,10 +283,9 @@
         height: 50px;
         position: absolute;
         transform: translateX(-50%);
-        right: 80%;
-        top: 10%;
-        border-radius: 45px;
         left: 10%;
+        top: 5%;
+        border-radius: 45px;
     }
 
 
@@ -392,7 +391,8 @@
 
     @media screen and (orientation: landscape) {
         .return{
-         top: 7%;
+         top: 5%;
+         left: 5%;
         }
         
         #ar-button {
