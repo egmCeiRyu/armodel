@@ -35,8 +35,8 @@
     }
 
     .close-spec {
-      margin-top: 72px;
-      padding: 15px 41px;
+      margin-top: 3px;
+      padding: 16px 31px;
       background: #ffffff22;
       border: 1px solid #ccc;
       border-radius: 5px;
@@ -45,7 +45,8 @@
     }
       
     #modelLink{
-      padding-top: 7px;
+      padding-top: 4px;
+      padding-bottom: 10px;
       color: #006bff; 
       text-decoration: underline;
     }
@@ -428,7 +429,7 @@
 
         #modelLink{
           width: 400px;
-          height: 250px;
+          height: 53px;
         }
         
         #closeIframeBtn{
