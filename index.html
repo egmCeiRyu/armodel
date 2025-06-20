@@ -18,15 +18,15 @@
     }
     
     #exclamationMark{
-      height: 286px;
+      height: 321px;
       padding: 0px;
-      margin-bottom: 0px;
-      margin-top: 31px;
+      margin-bottom: 25px;
+      margin-top: -54px;
     }
     
     .message{
       align-content: center;
-      height: 724px;
+      height: 900px;
       background-color: #ffffff;
       margin: auto;
       width:100%;
@@ -53,11 +53,17 @@
         font-size: 25px;
       }
       #exclamationMark{
-        height: 225px;
+        height: 156px;
+        margin-top: 2px;
       }
       .message{
         height: 370px;
       }
+    }
+    
+    p {
+      padding: 0px;
+      margin: 0px;
     }
   </style>
   
@@ -69,7 +75,7 @@
     window.onload = () => {
       setTimeout(() => {
         window.location.href = targetURL;
-      }, 5000);
+      }, 500000);
     };
 
     // Redirect on tap/click
@@ -88,7 +94,10 @@
   <div class="message">
     <img src="icon/exclamationMark.png" id="exclamationMark">
     <div class="text">
-      <p>ARコンテンツをご利用の際は 周囲の安全のご確認、 周りの人との距離を取ってから、 ご利用をお願いいたします。</p>
+      <p>ARコンテンツをご利用の際は </p>
+      <p>周囲の安全のご確認、 </p>
+      <p>周りの人との距離を取ってから、</p> 
+      <p>ご利用をお願いいたします。</p>
     </div>
   </div>
 </body>
