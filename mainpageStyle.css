@@ -1,14 +1,6 @@
       body {
         margin: 0;
         padding: 0;
-        font-family: "Roboto", sans-serif;
-        background-color: #0b36aa;
-        color: #ffffff;
-        overflow: hidden;
-        position: relative;
-        height: 100%;
-        justify-content: center; /* center horizontally */
-        align-items: center; /* center vertically */
         background: #001EC1;
         background: linear-gradient(0deg,rgba(0, 30, 193, 1) 0%, rgba(0, 118, 216, 1) 100%);
       }
@@ -25,8 +17,8 @@
         flex-direction: column;
         color: #ffffff;
         font-family: 'Roboto', sans-serif;
-        background-color: white;
-        height: 428px;
+        background-color: #ffffff;
+        height: 406px;
       }
       
       #main-content,
@@ -38,11 +30,8 @@
       .mainpage-title {
         flex-direction: column;
         flex-wrap: wrap;
-        background-color: #ffffff;
-        width: 100%;
         font-family: "novecento-sans", sans-serif;
         text-align: center;
-        color: #898989;
       }
 
       .bubbles {
@@ -84,19 +73,6 @@
       .mainpage-container {
         position: relative;
         z-index: 1;
-        padding: 3em;
-        text-align: center;
-      }
-
-      .qrcode {
-        width: 120px;
-        margin-top: 1em;
-      }
-
-
-      .brand {
-        display: inline;
-        color: black;
       }
 
       .catalog {
@@ -105,23 +81,14 @@
 
       .catalog img{
         width: 234px;
+        margin-top: 7px;
       }
 
-      .qrcode {
-        width: 53px;
-        height: 60px;
-        margin-top: 10px;
-      }
 
       .armenu-mainpage img{
-        margin-top: 29px;
+        margin-top: 46px;
         width: 285px;
       }
-
-
-      .qrcode {
-          margin-top: 0px;
-        }
 
       #qr-container {
         border-radius: 7px;
@@ -138,34 +105,19 @@
         margin-top:0px;
         font-size: 15px;
       }
- 
-      .brand-line {
-        white-space: nowrap; /* prevent line break */
-        display: inline-block;
-      }
-
-      .brand {
-        color: black;
-      }
-
-      .micron {
-        color: inherit; /* keeps same color as surrounding text, or define as needed */
-      }
-      
+     
       .qrcode2{
         width:200px;
         height: 200px;
       }
 
-      #hosokawalogo{
-        height: -17px;
-        width: 282px;
-        padding: 0px;
-        margin: auto;
+      #hosokawalogo img{
+        height: 49px;
+        margin-top: 32px;
       }
 
       #arword {
-        width: 409px;
+        width: 419px;
         margin-top: 25px;
       }
 
@@ -184,6 +136,17 @@
                 font-family: 'Roboto', sans-serif;
                 background-color: white;
                 height: 300px;
+              }
+              .catalog img{
+                width: 207px;
+              }
+              .armenu-mainpage img{
+                margin-top: 12px;
+                width: 285px;
+              }
+              #hosokawalogo img{
+                height: 49px;
+                margin-top: 14px;
               }
       }
 
