@@ -182,18 +182,10 @@
       z-index: 9999;
       text-align: center;
     }
-    .loadingText{
-      display: block;
+    .loadingText img{
+      width: 300px;
     }
-      
-    .imageloading{
-      display: block;
-    }
-      
-    .imageloading img{
-      width: 200px; 
-    }
-      
+       
 
     /* === AR Button === */
     #ar-button {
