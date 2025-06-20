@@ -34,7 +34,7 @@
         </div>
       </div>
       
-      <a class="armenu-mainpage" href="newMenu.html">
+      <a class="armenu-mainpage">
         <img src="icon/tapbtn.png"  class="arword" >
       </a>
     </div>
@@ -92,5 +92,19 @@
         });
       }
     </script>
+  
+    <script> 
+    // URL to redirect to
+    const targetURL = "newMenu.html";
+      
+    // Redirect on tap/click
+    document.addEventListener("click", () => {
+      window.location.href = targetURL;
+    });
+    
+    document.addEventListener("touchstart", () => {
+      window.location.href = targetURL;
+    });
+  </script>
   </body>
 </html>

@@ -15,12 +15,13 @@
       
       .page-wrapper {
         display: flex;
-        margin-top: 31%;
+        align-content: center;
+        margin-top: 30%;
         flex-direction: column;
         color: #ffffff;
         font-family: 'Roboto', sans-serif;
         background-color: white;
-        height: 400px;
+        height: 428px;
       }
       
       #main-content,
@@ -95,9 +96,6 @@
 
       .catalog {
         display: inline;
-        text-align: center;
-        color: black;
-        font-weight: bold;
       }
 
       .catalog img{
@@ -113,10 +111,9 @@
       .arword {
         display: block;
         align-content: center;
-        background-color: #85d8fd;
         width:268px;
         margin: auto;
-        padding-top: 15px;
+
       }
 
       .arword a:hover{
@@ -125,7 +122,6 @@
 
       .armenu-mainpage {
         color: white;
-        padding-bottom: 28px;
       }
 
       .armenu-mainpage img{
@@ -141,7 +137,6 @@
         }
 
       #qr-container {
-        background: #60abf7;
         border-radius: 7px;
         box-shadow: 0 0 25px rgba(74, 74, 74, 0.2);
         max-width: 200px;
@@ -176,8 +171,10 @@
       }
 
       #hosokawalogo{
-        height: 120px;
-        width: 180px;
+        height: -17px;
+        width: 282px;
+        padding: 0px;
+        margin: auto;
       }
 
       #arword {
