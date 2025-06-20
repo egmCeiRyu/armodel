@@ -22,30 +22,34 @@
       z-index: 999;
       flex-direction: column;
       text-align: center;
-      padding: 20px;
+      padding: 0px;
       box-sizing: border-box;
       overflow-y: auto; /* in case content exceeds height */
     }
 
     .spec-overlay p{
-      width: 332px;
+      width: 343px;
       text-align:justify;
       font-size: 14px;
+      margin-top: 12px;
+      margin-bottom: 0px;
     }
     
       
     .spec-overlay h2 {
-      margin-bottom: 30px;
-      font-size: 42px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      font-size: 50px;
     }
 
     .close-spec {
       position: absolute;
       margin-top: 3px;
       padding: 16px 31px;
+      color: white;
       cursor: pointer;
       width: 70px;
-      top: 84%;
+      top: 71%;
     }
       
     #modelLink{
