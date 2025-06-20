@@ -18,7 +18,7 @@
         color: #ffffff;
         font-family: 'Roboto', sans-serif;
         background-color: #ffffff;
-        height: 421px;
+        height: 368px;
       }
       
       #main-content,
@@ -86,7 +86,7 @@
 
 
       .armenu-mainpage img{
-        margin-top: 46px;
+        margin-top: 12px;
         width: 285px;
       }
 
@@ -117,7 +117,7 @@
       }
 
       #arword {
-        width: 419px;
+        width: 416px;
         margin-top: 25px;
       }
 
@@ -135,13 +135,13 @@
                 color: #ffffff;
                 font-family: 'Roboto', sans-serif;
                 background-color: white;
-                height: 300px;
+                height: 271px;
               }
               .catalog img{
-                width: 207px;
+                width: 179px;
               }
               .armenu-mainpage img{
-                margin-top: 12px;
+                margin-top: -4px;
                 width: 285px;
               }
               #hosokawalogo img{
@@ -156,9 +156,6 @@
         }
       }
 
-      @media screen and (orientation: landscape){
-        
-      }
 
 
 
