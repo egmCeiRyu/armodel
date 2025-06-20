@@ -467,6 +467,10 @@
       .dim {
         font-size: 3vw;
       }
+      
+      .qrcode {
+            display: none;
+        }
     }
 
     /* === Responsive === */
@@ -476,9 +480,9 @@
         }
     }
 
-    @media only screen and (max-width: 600px) {
-        .qrcode {
-            display: none;
+    @media only screen and (orientation:landscape) {
+        .loadingText img{
+          width: 300px;
         }
     }
 
