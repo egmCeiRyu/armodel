@@ -45,7 +45,7 @@
       transition: border 0.2s, box-shadow 0.2s;
       /* set the border of the choose button*/
       padding: 9px;
-      margin: 13px;
+      margin: 12px;
       background-color:#2957aa;
     }
     
@@ -126,5 +126,13 @@
       .thumbnail-container {
         max-width: 600px;
         width: 50%;
+      }
+    }
+
+    @media screen and (orientation: landscape){
+      .thumbnail-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* always 2 columns */
+        width: 76%;
       }
     }
