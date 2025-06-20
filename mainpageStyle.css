@@ -12,7 +12,12 @@
         background: #001EC1;
         background: linear-gradient(0deg,rgba(0, 30, 193, 1) 0%, rgba(0, 118, 216, 1) 100%);
       }
-      
+
+      .logo{
+        width: 100%;
+        margin: auto;
+      }
+
       .page-wrapper {
         display: flex;
         align-content: center;
@@ -108,29 +113,11 @@
         margin-top: 10px;
       }
 
-      .arword {
-        display: block;
-        align-content: center;
-        width:268px;
-        margin: auto;
-
-      }
-
-      .arword a:hover{
-        color: #1311f1;
-      }
-
-      .armenu-mainpage {
-        color: white;
-      }
-
       .armenu-mainpage img{
-        width: 321px;
+        margin-top: 29px;
+        width: 285px;
       }
 
-      .armenu-mainpage:hover {
-        color: #006d9d;
-      }
 
       .qrcode {
           margin-top: 0px;
