@@ -10,16 +10,23 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #0b36aa;
       font-family: sans-serif;
       font-size: 2em;
       text-align: center;
+      background: #001EC1;
+      background: linear-gradient(0deg,rgba(0, 30, 193, 1) 0%, rgba(0, 118, 216, 1) 100%);
+    }
+    
+    #exclamationMark{
+      height: 200px;
+      padding: 0px;
+      margin-bottom: 0px;
     }
     
     .message{
       align-content: center;
       height: 527px;
-      background-color: cornflowerblue;
+      background-color: #ffffff;
       margin: auto;
       width:100%;
     }
@@ -27,14 +34,17 @@
     .text{
       width:410px;
       margin: auto;
+      padding: 0px;
+      margin-bottom: 0px;
+      font-weight: bold;
     }
     
     .text p{
       align-items: center;
       text-align: center;
       font-family:Arial, Helvetica, sans-serif;
-      color:aliceblue; 
-      font-size: 45px;
+      font-size: 30px;
+      
     }
   </style>
   
@@ -42,7 +52,7 @@
     // URL to redirect to
     const targetURL = "main.html";
 
-    //Redirect after 3 seconds
+    Redirect after 3 seconds
     window.onload = () => {
       setTimeout(() => {
         window.location.href = targetURL;
@@ -63,8 +73,9 @@
   
 <body>
   <div class="message">
+    <img src="/icon/exclamationMark.png" id="exclamationMark">
     <div class="text">
-      <p>Hosokawa Micron! Redirecting...</p>
+      <p>ARコンテンツをご利用の際は 周囲の安全のご確認、 周りの人との距離を取ってから、 ご利用をお願いいたします。</p>
     </div>
   </div>
 </body>

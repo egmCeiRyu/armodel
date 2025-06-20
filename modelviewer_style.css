@@ -1,12 +1,12 @@
 /* === Base Styles === */
     body {
-        margin: 0;
-        font-family: 'Roboto', sans-serif;
-        background-color: linear-gradient( #F4F6F8, #D1D1D1);
-        padding: 0px;
-        height: 0px;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: linear-gradient( #F4F6F8, #D1D1D1);
+      padding: 0px;
+      height: 0px;
     }
-
+ 
     /* Tela de especificações (overlay) */
     .spec-overlay {
       position: fixed;
@@ -28,22 +28,24 @@
     }
 
     .spec-overlay p{
-      width: 300px;
+      width: 332px;
+      text-align:justify;
+      font-size: 14px;
     }
     
       
     .spec-overlay h2 {
-      margin-bottom: 15px;
+      margin-bottom: 30px;
+      font-size: 42px;
     }
 
     .close-spec {
+      position: absolute;
       margin-top: 3px;
       padding: 16px 31px;
-      background: #ffffff22;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      color: white;
       cursor: pointer;
+      width: 70px;
+      top: 84%;
     }
       
     #modelLink{
@@ -191,101 +193,98 @@
 
     /* === AR Button === */
     #ar-button {
-        position: absolute;
-        background-color: #000000;
-        color: #ffffff;
-        border: none;
-        font-size: 15px;
-        cursor: pointer;
-        font-family: "novecento-sans", sans-serif;
-        border-radius: 30px;
-        z-index: 10;
-        width: 35px;
-        height: 35px;
-        bottom: 162px;
-        right: 19px;
+      position: absolute;
+      color: #ffffff;
+      font-size: 15px;
+      cursor: pointer;
+      font-family: "novecento-sans", sans-serif;
+      z-index: 10;
+      width: 95px;
+      height: 95px;
+      bottom: 162px;
+      right: 19px;
     }
 
     #ar-button:after {
-        content: "";
-        background: #ff0000;
-        display: block;
-        position: absolute;
-        opacity: 0;
-        transition: all 0.8s
+      content: "";
+      background: #ff0000;
+      display: block;
+      position: absolute;
+      opacity: 0;
+      transition: all 0.8s
     }
 
     #ar-button:active:after {
-        padding: 0;
-        margin: 0;
-        opacity: 1;
-        transition: 0s
+      padding: 0;
+      margin: 0;
+      opacity: 1;
+      transition: 0s
     }
 
     .mainpage-container{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        background-color: #0c3879;
-        height: 500px;
-        width: 100%;
-        max-width: 675px;
-        margin: 25px auto;
-        padding: 5px;
-        box-shadow: 0 0 35px rgba(0, 0, 0, 0.4);
-        border-radius: 20px;
-        box-sizing: border-box;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #0c3879;
+      height: 500px;
+      width: 100%;
+      max-width: 675px;
+      margin: 25px auto;
+      padding: 5px;
+      box-shadow: 0 0 35px rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      box-sizing: border-box;
     }
 
     .mainpage-title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        background-color: #ffffff;
-          height: 21%;
-        width: 75%;
-        max-width: 601px;
-        padding: 10px 15px;
-        margin: 11px auto;
-        border-radius: 10px;
-        font-family: "novecento-sans", sans-serif;
-        text-align: center;
-        color: #898989;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      background-color: #ffffff;
+        height: 21%;
+      width: 75%;
+      max-width: 601px;
+      padding: 10px 15px;
+      margin: 11px auto;
+      border-radius: 10px;
+      font-family: "novecento-sans", sans-serif;
+      text-align: center;
+      color: #898989;
     }
 
     .armenu-mainpage{
-        justify-content: center;
-        display: block;
-        position: absolute;
-        margin-top: 417px;
-        width: 331px;
-        background-color: white; 
+      justify-content: center;
+      display: block;
+      position: absolute;
+      margin-top: 417px;
+      width: 331px;
+      background-color: white; 
     }
 
     /* === Title Section === */
     div.title {
-        display: flex;
-        flex-direction: row;
+      display: flex;
+      flex-direction: row;
     }
     .specification {
-        width: 50px;
-        height: 50px;
-        border-radius: 20px;
-        position: absolute;  
-        right: 5%;
-        top: 5%
+      width: 50px;
+      height: 50px;
+      border-radius: 20px;
+      position: absolute;  
+      right: 5%;
+      top: 5%
     }
 
 
     .return {
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        transform: translateX(-50%);
-        left: 10%;
-        top: 5%;
-        border-radius: 45px;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      transform: translateX(-50%);
+      left: 10%;
+      top: 5%;
+      border-radius: 45px;
     }
 
 
@@ -335,8 +334,6 @@
         transform: translateY(-5px);
     }
 
-    /* === Labels === */
-
     /* === Model Viewer === */
     model-viewer {
         width: 100vw;
@@ -370,11 +367,26 @@
     }
 
     #viewer-container{
-          position: relative;
-          width: 100%;
-          height: 100vh;
-          overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
     }
+
+    /* === texts=== */
+
+    #paragraph1{
+      padding: 0px;
+    }
+
+    #paragraph2{
+      padding: 0px;
+    }
+
+    #paragraph3{
+      padding: 0px;
+    }
+
 
     @media (max-width: 600px) {
         .mainpage-container {
@@ -398,8 +410,8 @@
         #ar-button {
           bottom: 53px; 
           right: 39px; 
-          width: 45px;
-          height: 45px;
+          width: 95px;
+          height: 95px;
         }
 
         #iframeWrapper{
