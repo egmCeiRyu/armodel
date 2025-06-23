@@ -69,11 +69,11 @@
     }
     
     .hosokawalogo{
-      padding-left: -2px;
       padding-top: 27px;
       padding-bottom: 26px;
-      height: 52px;
+      height: 43px;
       margin: auto;
+      z-index: 999;
     }
 
     .logo {
@@ -110,7 +110,6 @@
       bottom: -5px; /* Distance from the bottom of the screen */
       left: 50%;
       transform: translateX(-50%);
-
       font-size: 27px;
       color: white;
       cursor: pointer;
