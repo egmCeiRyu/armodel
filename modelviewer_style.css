@@ -31,7 +31,7 @@
       width: 313px;
       text-align:justify;
       font-size: 13px;
-      margin-top: 12px;
+      margin-top: -3px;
       margin-bottom: 0px;
       overflow-y: auto;
     }
@@ -435,6 +435,14 @@
           border: solid #002476;
           font-size: 19px;
         }
+        .close-spec {
+          position: relative;
+          padding: 16px 31px;
+          color: white;
+          cursor: pointer;
+          width: 43px;
+          top: 0%;
+      }
 
     }
      
