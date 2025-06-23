@@ -3,6 +3,12 @@
       background: #0068D4;
     }
 
+.companylogo{
+  height: 88px;
+  padding-left: 24px;
+  padding-top: 5px;
+}
+
     .label {
       color: #ffffff;
       font-weight: bold;
