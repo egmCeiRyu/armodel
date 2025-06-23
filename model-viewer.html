@@ -413,6 +413,55 @@
       e.preventDefault();
       }, { passive: false });
   </script>
+  
+  <script type="module">
+  const modelViewer = document.getElementById('modelViewer');
+  const modelUrl = new URLSearchParams(window.location.search).get('model');
+  const modelKey = modelUrl ? modelUrl.split('/').pop().split('.')[0] : "";
+
+  const specButton = document.getElementById('specButton');
+  const specOverlay = document.getElementById('specOverlay');
+  const closeSpec = document.getElementById('closeSpec');
+  const modelLink = document.getElementById('modelLink');
+  const iframeWrapper = document.getElementById('iframeWrapper');
+  const modelIframe = document.getElementById('modelIframe');
+
+  fetch('modelSpecs.json')
+    .then(response => response.json())
+    .then(modelSpecs => {
+      if (modelKey && modelSpecs[modelKey]) {
+        const spec = modelSpecs[modelKey];
+        specOverlay.querySelector('h2').innerHTML = spec.title;
+        specOverlay.querySelector('p').innerHTML = spec.description;
+
+        if (spec.link) {
+          modelLink.style.display = 'inline';
+          modelLink.onclick = (e) => {
+            e.preventDefault();
+            modelIframe.src = spec.link;
+            iframeWrapper.style.display = 'block';
+          };
+        } else {
+          modelLink.style.display = 'none';
+        }
+      } else {
+        specOverlay.querySelector('h2').textContent = "仕様情報がありません";
+        specOverlay.querySelector('p').textContent = "このモデルの仕様はまだ登録されていません。";
+        modelLink.style.display = 'none';
+      }
+    });
+
+  specButton.addEventListener('click', () => {
+    specOverlay.style.display = 'flex';
+  });
+
+  closeSpec.addEventListener('click', () => {
+    specOverlay.style.display = 'none';
+    iframeWrapper.style.display = 'none';
+    modelIframe.src = "";
+  });
+</script>
+  
 </body>
 </html>
 

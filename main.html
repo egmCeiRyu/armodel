@@ -6,6 +6,43 @@
     <title>3D Model Thumbnails</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"  />
     <link rel="stylesheet" href="mainpageStyle.css" >
+    
+<style>
+.armenu-mainpage img {
+  box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
+  -webkit-animation: pulse 2.2s infinite;
+          animation: pulse 2.2s infinite;
+  border-radius: 10px;
+}
+.armenu-mainpage img:hover {
+  -webkit-animation: none;
+          animation: none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(90, 153, 212, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(90, 153, 212, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+  }
+}
+</style>
   </head>
 
 <body>
@@ -31,7 +68,9 @@
               <img src="icon/ARMainLogo.png" >
             </div>
             <div class="armenu-mainpage">
-              <img src="icon/tapbtn.png">
+              <a href="newMenu.html" target="blank">
+                <img src="icon/tapbtn.png" href="newMenu.html">
+              </a>
             </div>
           </div>
         </div>
@@ -92,18 +131,5 @@
       }
     </script>
   
-    <script> 
-    // URL to redirect to
-    const targetURL = "newMenu.html";
-      
-    // Redirect on tap/click
-    document.addEventListener("click", () => {
-      window.location.href = targetURL;
-    });
-    
-    document.addEventListener("touchstart", () => {
-      window.location.href = targetURL;
-    });
-  </script>
   </body>
 </html>
