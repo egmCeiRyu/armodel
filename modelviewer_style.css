@@ -30,16 +30,18 @@
     .spec-overlay p{
       width: 313px;
       text-align:justify;
-      font-size: 15px;
+      font-size: 13px;
       margin-top: 12px;
       margin-bottom: 0px;
+      overflow-y: auto;
     }
     
       
     .spec-overlay h2 {
       margin-bottom: 0px;
       margin-top: 0px;
-      font-size: 30px;
+      font-size: 25px;
+      overflow-y: auto;
     }
 
     .close-spec {
