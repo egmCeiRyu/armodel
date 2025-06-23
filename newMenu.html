@@ -11,10 +11,7 @@
 
 <body>
   <div class="title">
-    <img src=icon/logo.png alt="logo" class="hosokawalogo">
-    <a class="logo">
-      <span class="catalog"> <span style="color: white;">製品カタログ</span></span>
-    </a>
+    <img src=icon/catalogTitle.png alt="logo" class="hosokawalogo">
   </div>
 
   <div class="thumbnail-container" id="model-thumbnails">
@@ -70,8 +67,10 @@
       3rt-xrf</span>
     </div>
   </div>
+  <div id="footer">
+      <img src="icon/buttonSelection.png" id="view-model-btn" disabled>
+  </div>
 
-  <img src="icon/selectionIcon.png" id="view-model-btn" disabled>
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
@@ -106,9 +105,11 @@
     });
   </script>
     
+    <!--
     <footer class="foot">
         
     </footer>
+    -->
 
 </body>
 </html>
