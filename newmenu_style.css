@@ -82,14 +82,6 @@
       margin: auto;
     }
 
-    .logo {
-      font-size: 36px;
-      padding: 29px;
-      font-family: 'Roboto', sans-serif;
-      font-weight: bold;
-      text-align: center;   
-    }
-
     .foot {
       background-color: rgba(0, 30, 193, 1);
       width: 100%;
