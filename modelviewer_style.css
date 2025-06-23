@@ -30,7 +30,7 @@
     .spec-overlay p{
       width: 313px;
       text-align:justify;
-      font-size: 17px;
+      font-size: 15px;
       margin-top: 12px;
       margin-bottom: 0px;
     }
@@ -39,7 +39,7 @@
     .spec-overlay h2 {
       margin-bottom: 0px;
       margin-top: 0px;
-      font-size: 40px;
+      font-size: 30px;
     }
 
     .close-spec {
