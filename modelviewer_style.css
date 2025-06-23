@@ -33,7 +33,6 @@
       margin-top: -3px;
       margin-bottom: 0px;
     }
-    
       
     .spec-overlay h2 {
       margin-bottom: 0px;
@@ -197,8 +196,8 @@
       z-index: 10;
       width: 95px;
       height: 95px;
-      bottom: 162px;
-      right: -8px;
+      bottom: 10%;
+      right: 0%;
     }
 
     #ar-button:after {
