@@ -28,9 +28,9 @@
     }
 
     .spec-overlay p{
-      width: 343px;
+      width: 313px;
       text-align:justify;
-      font-size: 14px;
+      font-size: 17px;
       margin-top: 12px;
       margin-bottom: 0px;
     }
@@ -39,7 +39,7 @@
     .spec-overlay h2 {
       margin-bottom: 0px;
       margin-top: 0px;
-      font-size: 50px;
+      font-size: 40px;
     }
 
     .close-spec {
@@ -48,8 +48,8 @@
       padding: 16px 31px;
       color: white;
       cursor: pointer;
-      width: 70px;
-      top: 62%;
+      width: 58px;
+      top: 80%;
     }
       
     #modelLink{
