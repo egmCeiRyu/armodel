@@ -167,14 +167,14 @@
           padding: 14px;
           margin: auto;
           margin-top: 16px;    
-          background-color: #0085fa;
+          background-color: #2c6cff;
         }
         
         .page-wrapper {
           margin-top: 11%;
           flex-direction: column;
           height: 317px;
-          background-color: rgba(255, 255, 255, 0.87);
+          background-color: rgb(255, 255, 255);
         } 
       }
 
