@@ -461,7 +461,30 @@
     modelIframe.src = "";
   });
 </script>
-  
+<script>
+  modelViewer.addEventListener('ar-status', (event) => {
+  if (event.detail.status === 'presenting') {
+    // Estamos em AR (iOS Quick Look ou outros modos)
+    // Tenta achar o botão de captura de tela no shadow DOM
+    const shadowRoot = modelViewer.shadowRoot;
+    if (shadowRoot) {
+      const screenshotButton = shadowRoot.querySelector('button[slot="ar-button"]');
+      if (screenshotButton) {
+        screenshotButton.style.display = 'none'; // oculta o botão screenshot
+      }
+    }
+  } else if (event.detail.status === 'not-presenting') {
+    // Ao sair do AR, mostra o botão novamente
+    const shadowRoot = modelViewer.shadowRoot;
+    if (shadowRoot) {
+      const screenshotButton = shadowRoot.querySelector('button[slot="ar-button"]');
+      if (screenshotButton) {
+        screenshotButton.style.display = ''; // mostra o botão novamente
+      }
+    }
+  }
+});
+</script>
 </body>
 </html>
 
