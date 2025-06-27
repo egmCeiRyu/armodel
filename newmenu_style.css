@@ -128,7 +128,16 @@
       .thumbnail-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* always 2 columns */
-        width: 76%;
+        width: 64%;
+      }
+      
+      .thumbnail-link img{
+        height: 122px;
+        width: 121px;
+      }
+      
+      #thumbnail-box{
+        height: 192px;
       }
       
       .companylogo{
