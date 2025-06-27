@@ -89,7 +89,7 @@
     <script type="module">
       const urlParams = new URLSearchParams(window.location.search);
       const modelUrl = urlParams.get('model');
-      //const modelViewer = document.getElementById('modelViewer');
+      const modelViewer = document.getElementById('modelViewer');
       //const checkbox = modelViewer.querySelector('#show-dimensions');
 //
       //function setVisibility(visible) {
@@ -105,18 +105,11 @@
       //checkbox.addEventListener('change', () => {
       //  setVisibility(checkbox.checked);
       //});
-          // Construct URLs for GLB and USDZ
-    // Extract model base name, e.g. 'model1'
-    const modelName = modelGlb.split("/").pop().split(".")[0];
 
-    // Construct URLs for GLB and USDZ
-    const modelGlbUrl = `models/${modelName}.glb`;
-    const modelUsdzUrl = `models/${modelName}.usdz`;
 
-    const modelViewer = document.getElementById("modelViewer");
-    modelViewer.setAttribute("src", modelGlbUrl);
-    modelViewer.setAttribute("ios-src", modelUsdzUrl + `#callToAction=Learn%20More&link=https://google.com`);
-
+      if (modelUrl) {
+        modelViewer.setAttribute('src', modelUrl);
+      }
 
       // === ESPECIFICAÇÕES POR MODELO ===
       const modelSpecs = {
