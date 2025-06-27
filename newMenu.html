@@ -1,203 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3D Model Viewer</title>
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-  <link rel="stylesheet" href="modelviewer_style.css" />
-  <link rel="stylesheet" href="https://use.typekit.net/zfi8dmc.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/zfi8dmc.css">
+  <link rel="stylesheet" href="newmenu_style.css">
+  <title>3D Model Thumbnails</title>
 </head>
 
 <body>
-  <model-viewer
-    id="modelViewer"
-    shadow-intensity="1"
-    shadow-softness="1"
-    camera-controls
-    touch-action="pan-y, pan-x, none"
-    camera-orbit="-25deg 75deg auto"
-    scale="1 1 1"
-    orbit-sensitivity="2"
-    ar-modes="webxr scene-viewer quick-look"
-  >
-    <!-- Hotspots -->
-    <button style="background-color:rgb(0,0,0)" slot="hotspot-dot+X-Y+Z" class="dot" data-position="1 -1 1" data-normal="1 0 0"></button>
-    <button slot="hotspot-dim+X-Y" class="dim" data-position="1 -1 0" data-normal="1 0 0"></button>
-    <button style="background-color:rgb(0,0,0)" slot="hotspot-dot+X-Y-Z" class="dot" data-position="1 -1 -1" data-normal="1 0 0"></button>
-    <button slot="hotspot-dim+X-Z" class="dim" data-position="1 0 -1" data-normal="1 0 0"></button>
-    <button style="background-color:rgb(0,0,0)" slot="hotspot-dot+X+Y-Z" class="dot" data-position="1 1 -1" data-normal="0 1 0"></button>
-    <button slot="hotspot-dim+Y-Z" class="dim" data-position="0 -1 -1" data-normal="0 1 0"></button>
-    <button style="background-color:rgb(0,0,0)" slot="hotspot-dot-X+Y-Z" class="dot" data-position="-1 1 -1" data-normal="0 1 0"></button>
-    <button slot="hotspot-dim-X-Z" class="dim" data-position="-1 0 -1" data-normal="-1 0 0"></button>
-    <button style="background-color:rgb(0,0,0)" slot="hotspot-dot-X-Y-Z" class="dot" data-position="-1 -1 -1" data-normal="-1 0 0"></button>
-    <button slot="hotspot-dim-X-Y" class="dim" data-position="-1 -1 0" data-normal="-1 0 0"></button>
-    <button style="background-color:rgb(0,0,0)" slot="hotspot-dot-X-Y+Z" class="dot" data-position="-1 -1 1" data-normal="-1 0 0"></button>
-
-    <svg id="dimLines" width="100%" height="100%" class="dimensionLineContainer">
-      <line class="dimensionLine"></line>
-      <line class="dimensionLine"></line>
-      <line class="dimensionLine"></line>
-      <line class="dimensionLine"></line>
-      <line class="dimensionLine"></line>
-    </svg>
-
-    <img id="ar-button" src="icon/arbtn.png" slot="ar-button" alt="AR Button" />
-  </model-viewer>
-
-  <div id="buttonsGRP">
-    <a href="newMenu.html">
-      <img class="return" src="icon/returnbtn.png" alt="Return" />
-    </a>
-    <img class="specification" src="icon/infobtn.png" alt="Specification" id="specButton" />
+  <div class="title">
+    <img src=icon/logo.png alt="logo" class="companylogo">
+    <img src=icon/tittleMenu.png alt="logo" class="hosokawalogo">
   </div>
 
-  <div id="arOverlay" class="ar-overlay">
-    <div class="loadingText">
-      <img src="icon/explanation.png" />
+  <div class="thumbnail-container" id="model-thumbnails">
+    <!-- Modelos -->
+    <div class="thumbnail-link" data-model="models/model1.glb" data-name="model1">
+          <img src="thumbnails/model1_thumb.png" alt="Model 1" class="thumbnail-img">
+          <span class="label">混合機<br> サイクロミックス<br>
+      CLX-1000</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model2.glb" data-name="model2">
+        <img src="thumbnails/model2_thumb.png" alt="Model 2" class="thumbnail-img">
+        <span class="label">混合機<br> サイクロミックス<br>
+      CLX-1000</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model3.glb" data-name="model3">
+        <img src="thumbnails/model3_thumb.png" alt="Model 3" class="thumbnail-img">
+        <span class="label">混合機<br> サイクロミックス<br>
+      CLX-1000</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model4.glb" data-name="model4">
+      <img src="thumbnails/model4_thumb.png" alt="Model 4" class="thumbnail-img">
+      <span class="label">混合機<br> サイクロミックス<br>
+      CLX-1000</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model5.glb" data-name="model5">
+      <img src="thumbnails/model5_thumb.png" alt="Model 5" class="thumbnail-img">
+      <span class="label">混合機<br> サイクロミックス<br>
+      CLX-1000</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model6.glb" data-name="model6">
+      <img src="thumbnails/model6_thumb.png" alt="Model 6" class="thumbnail-img">
+      <span class="label">混合機<br> サイクロミックス<br>
+      CLX-1000</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model7.glb" data-name="model7">
+      <img src="thumbnails/model7_thumb.png" alt="Model 7" class="thumbnail-img">
+      <span class="label">混合機<br> サイクロミックス<br>
+      CLX-1000</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model8.glb" data-name="model8">
+      <img src="thumbnails/model8_thumb.png" alt="Model 8" class="thumbnail-img">
+      <span class="label">混合機<br> サイクロミックス<br>
+      CLX-1000</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model9.glb" data-name="model9">
+      <img src="thumbnails/model9_thumb.png" alt="Model 9" class="thumbnail-img">
+      <span class="label">混合機<br> サイクロミックス<br>
+      CLX-1000</span>
+    </div>
+    <div class="thumbnail-link" data-model="models/model10.glb" data-name="model10">
+      <img src="thumbnails/model10_thumb.png" alt="Model 10" class="thumbnail-img">
+      <span class="label">混合機<br> サイクロミックス<br>
+      CLX-1000</span>
     </div>
   </div>
-
-  <div class="spec-overlay" id="specOverlay">
-    <h2>製品仕様</h2>
-    <p id="specDescription"></p>
-    <a id="modelLink" href="#" target="_blank" style="display:none;">製品仕様</a>
-    <div id="iframeWrapper" style="display:none;">
-      <button id="closeIframeBtn">×</button>
-      <iframe title="model" id="modelIframe"></iframe>
-    </div>
-    <img src="icon/returnbtn.png" class="close-spec" id="closeSpec" />
+  <div id="footer">
+      <img src="icon/buttonSelection.png" id="view-model-btn" disabled>
   </div>
+
 
   <script type="module">
-    // Get model URL from query string
-    const urlParams = new URLSearchParams(window.location.search);
-    let modelGlb = urlParams.get("model") || "models/model1.glb";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
+    import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-analytics.js";
+    import { firebaseConfig } from "./firebase-config.js";
 
-    // Extract model base name, e.g. 'model1'
-    const modelName = modelGlb.split("/").pop().split(".")[0];
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
 
-    // Construct URLs for GLB and USDZ
-    const modelGlbUrl = `models/${modelName}.glb`;
-    const modelUsdzUrl = `models/${modelName}.usdz`;
+    let selectedModelUrl = "";
+    let selectedModelName = "";
 
-    const modelViewer = document.getElementById("modelViewer");
-    modelViewer.setAttribute("src", modelGlbUrl);
-    modelViewer.setAttribute("ios-src", modelUsdzUrl + `#callToAction=Learn%20More&link=https://example.com/details/${modelName}`);
+    const thumbnails = document.querySelectorAll('.thumbnail-link');
+    const viewModelBtn = document.getElementById('view-model-btn');
 
-    // Model specs data (you can replace this with JSON fetch if needed)
-    const modelSpecs = {
-      model1: {
-        title: "Model 1",
-        description:
-          "木製フレームと布張りの座面を備えたモダンなデザインの椅子。軽量で耐久性があります。",
-        link: "https://example.com/details/model1",
-      },
-      model2: {
-        title: "Model 2",
-        description:
-          "最大6人まで対応可能。ガラス天板と金属脚を備えたスタイリッシュなダイニングテーブル。",
-        link: "https://example.com/details/model2",
-      },
-      model3: {
-        title: "Model 3",
-        description: "LEDライト内蔵のモダンな天井ランプ。省エネで温かい光を提供します。",
-        link: "https://example.com/details/model3",
-      },
-      // Add more models here as needed...
-    };
+    thumbnails.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        thumbnails.forEach(t => t.classList.remove('selected'));
+        thumb.classList.add('selected');
 
-    // Elements for spec overlay
-    const specButton = document.getElementById("specButton");
-    const specOverlay = document.getElementById("specOverlay");
-    const closeSpec = document.getElementById("closeSpec");
-    const modelLink = document.getElementById("modelLink");
-    const specDescription = document.getElementById("specDescription");
-    const iframeWrapper = document.getElementById("iframeWrapper");
-    const modelIframe = document.getElementById("modelIframe");
-    const closeIframeBtn = document.getElementById("closeIframeBtn");
-
-    // Load specs dynamically
-    if (modelSpecs[modelName]) {
-      const spec = modelSpecs[modelName];
-      specOverlay.querySelector("h2").textContent = spec.title;
-      specDescription.textContent = spec.description;
-
-      if (spec.link) {
-        modelLink.style.display = "inline";
-        modelLink.href = spec.link;
-        modelLink.onclick = (e) => {
-          e.preventDefault();
-          modelIframe.src = spec.link;
-          iframeWrapper.style.display = "block";
-        };
-      } else {
-        modelLink.style.display = "none";
-      }
-    } else {
-      specOverlay.querySelector("h2").textContent = "仕様情報がありません";
-      specDescription.textContent = "このモデルの仕様はまだ登録されていません。";
-      modelLink.style.display = "none";
-    }
-
-    specButton.addEventListener("click", () => {
-      specOverlay.style.display = "flex";
+        selectedModelUrl = thumb.getAttribute('data-model');
+        selectedModelName = thumb.getAttribute('data-name');
+        viewModelBtn.disabled = false;
+      });
     });
 
-    closeSpec.addEventListener("click", () => {
-      specOverlay.style.display = "none";
-      iframeWrapper.style.display = "none";
-      modelIframe.src = "";
-    });
-
-    closeIframeBtn.addEventListener("click", () => {
-      iframeWrapper.style.display = "none";
-      modelIframe.src = "";
-    });
-
-    // AR button and overlay handling
-    const arButton = document.querySelector("#ar-button");
-    const arOverlay = document.getElementById("arOverlay");
-    let arJustStarted = false;
-    let arTimeout = null;
-
-    function startAR() {
-      arOverlay.style.display = "none";
-      arJustStarted = false;
-      modelViewer.activateAR();
-    }
-
-    arButton.addEventListener("click", (event) => {
-      if (!arJustStarted) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        arOverlay.style.display = "flex";
-        arJustStarted = true;
-
-        arTimeout = setTimeout(() => {
-          startAR();
-        }, 5000);
+    viewModelBtn.addEventListener('click', () => {
+      if (selectedModelUrl) {
+        logEvent(analytics, "button_click", { button_name: selectedModelName });
+        window.location.href = `model-viewer.html?model=${encodeURIComponent(selectedModelUrl)}`;
       }
     });
-
-    arOverlay.addEventListener("click", () => {
-      if (arJustStarted) {
-        clearTimeout(arTimeout);
-        startAR();
-      }
-    });
-
-    modelViewer.addEventListener("ar-status", (event) => {
-      if (event.detail.status === "not-presenting") {
-        arOverlay.style.display = "none";
-        arJustStarted = false;
-        clearTimeout(arTimeout);
-      }
-    });
-
-    // Your existing hotspot, dimension lines, and camera control code can go here (if needed)...
-
   </script>
+    
+    <!--
+    <footer class="foot">
+        
+    </footer>
+    -->
+
 </body>
 </html>
