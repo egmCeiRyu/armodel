@@ -105,7 +105,13 @@
       //checkbox.addEventListener('change', () => {
       //  setVisibility(checkbox.checked);
       //});
+      // Construct URLs for GLB and USDZ
+      const modelGlbUrl = `models/${modelName}.glb`;
+      const modelUsdzUrl = `models/${modelName}.usdz`;
 
+      const modelViewer = document.getElementById("modelViewer");
+      modelViewer.setAttribute("src", modelGlbUrl);
+      modelViewer.setAttribute("ios-src", modelUsdzUrl + `#callToAction=Learn%20More&link=https:https://www.google.com/`);
 
       if (modelUrl) {
         modelViewer.setAttribute('src', modelUrl);
