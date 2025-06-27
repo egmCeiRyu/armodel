@@ -7,6 +7,41 @@
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
   <link rel="stylesheet" href="modelviewer_style.css">
   <link rel="stylesheet" href="https://use.typekit.net/zfi8dmc.css"> 
+  <style>
+                  .hotspot {
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 10px;
+                    border: none;
+                    background-color: blue;
+                    box-sizing: border-box;
+                    pointer-events: none;
+                  }
+
+                  .hotspot[slot="hotspot-hand"] {
+                    --min-hotspot-opacity: 0;
+                    background-color: red;
+                  }
+
+                  .hotspot[slot="hotspot-foot"]:not([data-visible]) {
+                    background-color: transparent;
+                    border: 3px solid blue;
+                  }
+
+                  .annotation {
+                    background-color: #888888;
+                    position: absolute;
+                    transform: translate(10px, 10px);
+                    border-radius: 10px;
+                    padding: 10px;
+                  }
+
+                  /* This keeps child nodes hidden while the element loads */
+                  :not(:defined)>* {
+                    display: none;
+                  }
+                </style>
 </head>
 
 <body>
