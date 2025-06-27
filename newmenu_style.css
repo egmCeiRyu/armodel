@@ -30,6 +30,7 @@
       margin:auto;
       width: 100%;
       text-align: center;
+      overflow-y:auto;
     }
 
     .thumbnail-container {
