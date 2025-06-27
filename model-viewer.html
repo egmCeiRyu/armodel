@@ -11,7 +11,7 @@
 
 <body>
   <model-viewer ar id="modelViewer"
-    ios-src='https://egmceiryu.github.io/armodel/model-viewer.html?model=models%2Fmodel1.glb#custom=https://example.com/customBanners/comingSoonBanner.html'
+    ios-src='https://example.com/biplane.usdz#callToAction=Add%20to%20cart'
     shadow-intensity="1"
     shadow-softness="1"
     camera-controls
@@ -20,27 +20,26 @@
     scale="1 1 1"
     orbit-sensitivity="2"
     ar-modes="webxr scene-viewer quick-look">
-
-                    <button style="background-color:rgb(0,0,0)" slot="hotspot-dot+X-Y+Z" class="dot" data-position="1 -1 1" data-normal="1 0 0"></button>
-                    <button slot="hotspot-dim+X-Y" class="dim" data-position="1 -1 0" data-normal="1 0 0"></button>
-                    <button style="background-color:rgb(0,0,0)" slot="hotspot-dot+X-Y-Z" class="dot" data-position="1 -1 -1" data-normal="1 0 0"></button>
-                    <button slot="hotspot-dim+X-Z" class="dim" data-position="1 0 -1" data-normal="1 0 0"></button>
-                    <button style="background-color:rgb(0,0,0)" slot="hotspot-dot+X+Y-Z" class="dot" data-position="1 1 -1" data-normal="0 1 0"></button>
-                    <button slot="hotspot-dim+Y-Z" class="dim" data-position="0 -1 -1" data-normal="0 1 0"></button>
-                    <button style="background-color:rgb(0,0,0)" slot="hotspot-dot-X+Y-Z" class="dot" data-position="-1 1 -1" data-normal="0 1 0"></button>
-                    <button slot="hotspot-dim-X-Z" class="dim" data-position="-1 0 -1" data-normal="-1 0 0"></button>
-                    <button style="background-color:rgb(0,0,0)" slot="hotspot-dot-X-Y-Z" class="dot" data-position="-1 -1 -1" data-normal="-1 0 0"></button>
-                    <button slot="hotspot-dim-X-Y" class="dim" data-position="-1 -1 0" data-normal="-1 0 0"></button>
-                    <button style="background-color:rgb(0,0,0)" slot="hotspot-dot-X-Y+Z" class="dot" data-position="-1 -1 1" data-normal="-1 0 0"></button>
-                    <svg id="dimLines" width="100%" height="100%" class="dimensionLineContainer">
-                      <line class="dimensionLine"></line>
-                      <line class="dimensionLine"></line>
-                      <line class="dimensionLine"></line>
-                      <line class="dimensionLine"></line>
-                      <line class="dimensionLine"></line>
-                    </svg>
+      <button style="background-color:rgb(0,0,0)" slot="hotspot-dot+X-Y+Z" class="dot" data-position="1 -1 1" data-normal="1 0 0"></button>
+      <button slot="hotspot-dim+X-Y" class="dim" data-position="1 -1 0" data-normal="1 0 0"></button>
+      <button style="background-color:rgb(0,0,0)" slot="hotspot-dot+X-Y-Z" class="dot" data-position="1 -1 -1" data-normal="1 0 0"></button>
+      <button slot="hotspot-dim+X-Z" class="dim" data-position="1 0 -1" data-normal="1 0 0"></button>
+      <button style="background-color:rgb(0,0,0)" slot="hotspot-dot+X+Y-Z" class="dot" data-position="1 1 -1" data-normal="0 1 0"></button>
+      <button slot="hotspot-dim+Y-Z" class="dim" data-position="0 -1 -1" data-normal="0 1 0"></button>
+      <button style="background-color:rgb(0,0,0)" slot="hotspot-dot-X+Y-Z" class="dot" data-position="-1 1 -1" data-normal="0 1 0"></button>
+      <button slot="hotspot-dim-X-Z" class="dim" data-position="-1 0 -1" data-normal="-1 0 0"></button>
+      <button style="background-color:rgb(0,0,0)" slot="hotspot-dot-X-Y-Z" class="dot" data-position="-1 -1 -1" data-normal="-1 0 0"></button>
+      <button slot="hotspot-dim-X-Y" class="dim" data-position="-1 -1 0" data-normal="-1 0 0"></button>
+      <button style="background-color:rgb(0,0,0)" slot="hotspot-dot-X-Y+Z" class="dot" data-position="-1 -1 1" data-normal="-1 0 0"></button>
+      <svg id="dimLines" width="100%" height="100%" class="dimensionLineContainer">
+        <line class="dimensionLine"></line>
+        <line class="dimensionLine"></line>
+        <line class="dimensionLine"></line>
+        <line class="dimensionLine"></line>
+        <line class="dimensionLine"></line>
+      </svg>
       <!-- Botão voltar -->
-      <img id="ar-button" src="icon/arbtn.png" slot="ar-button" alt="arbtn">
+    <img id="ar-button" src="icon/arbtn.png" slot="ar-button" alt="arbtn">
       <!--
       <div id="controls" class="dim glass">
         <label for="show-dimensions">寸法を示す：</label>
@@ -71,18 +70,14 @@
         精密混合を行うバッチ式の高速せん断型混合機です。  ・特長 短い時間で均一な混合が可能</p>
 
       <a id="modelLink" href="#" target="_blank">製品仕様</a> 
-
         <div id="iframeWrapper">
           <button id="closeIframeBtn">
             ×
           </button>
-
           <iframe  title="model"
                   id="modelIframe">
           </iframe>
-
         </div>
-      
       <img src="icon/returnbtn.png" class="close-spec" id="closeSpec">
     
     </div>
@@ -106,7 +101,6 @@
       //checkbox.addEventListener('change', () => {
       //  setVisibility(checkbox.checked);
       //});
-
 
       if (modelUrl) {
         modelViewer.setAttribute('src', modelUrl);
@@ -186,18 +180,18 @@
       const modelIframe = document.getElementById('modelIframe');
 
     // Define o comportamento do link e iframe
-    if (spec.link) {
-      modelLink.style.display = 'inline';
+      if (spec.link) {
+        modelLink.style.display = 'inline';
 
-      modelLink.onclick = (e) => {
-        e.preventDefault(); // Impede abrir nova aba
-        modelIframe.src = spec.link;
-        iframeWrapper.style.display = 'block';
-      };
-    } else {
-      modelLink.style.display = 'none';
-      iframeWrapper.style.display = 'none';
-    }
+        modelLink.onclick = (e) => {
+          e.preventDefault(); // Impede abrir nova aba
+          modelIframe.src = spec.link;
+          iframeWrapper.style.display = 'block';
+        };
+      } else {
+        modelLink.style.display = 'none';
+        iframeWrapper.style.display = 'none';
+      }
         } else {
           specOverlay.querySelector('h2').textContent = "仕様情報がありません";
           specOverlay.querySelector('p').textContent = "このモデルの仕様はまだ登録されていません。";
@@ -415,53 +409,52 @@
       //}, { passive: false });
   </script>
   
-  <script type="module">
-  const modelViewer = document.getElementById('modelViewer');
-  const modelUrl = new URLSearchParams(window.location.search).get('model');
-  const modelKey = modelUrl ? modelUrl.split('/').pop().split('.')[0] : "";
+    <script type="module">
+    const modelViewer = document.getElementById('modelViewer');
+    const modelUrl = new URLSearchParams(window.location.search).get('model');
+    const modelKey = modelUrl ? modelUrl.split('/').pop().split('.')[0] : "";
+    const specButton = document.getElementById('specButton');
+    const specOverlay = document.getElementById('specOverlay');
+    const closeSpec = document.getElementById('closeSpec');
+    const modelLink = document.getElementById('modelLink');
+    const iframeWrapper = document.getElementById('iframeWrapper');
+    const modelIframe = document.getElementById('modelIframe');
 
-  const specButton = document.getElementById('specButton');
-  const specOverlay = document.getElementById('specOverlay');
-  const closeSpec = document.getElementById('closeSpec');
-  const modelLink = document.getElementById('modelLink');
-  const iframeWrapper = document.getElementById('iframeWrapper');
-  const modelIframe = document.getElementById('modelIframe');
+    fetch('modelSpecs.json')
+      .then(response => response.json())
+      .then(modelSpecs => {
+        if (modelKey && modelSpecs[modelKey]) {
+          const spec = modelSpecs[modelKey];
+          specOverlay.querySelector('h2').innerHTML = spec.title;
+          specOverlay.querySelector('p').innerHTML = spec.description;
 
-  fetch('modelSpecs.json')
-    .then(response => response.json())
-    .then(modelSpecs => {
-      if (modelKey && modelSpecs[modelKey]) {
-        const spec = modelSpecs[modelKey];
-        specOverlay.querySelector('h2').innerHTML = spec.title;
-        specOverlay.querySelector('p').innerHTML = spec.description;
-
-        if (spec.link) {
-          modelLink.style.display = 'inline';
-          modelLink.onclick = (e) => {
-            e.preventDefault();
-            modelIframe.src = spec.link;
-            iframeWrapper.style.display = 'block';
-          };
+          if (spec.link) {
+            modelLink.style.display = 'inline';
+            modelLink.onclick = (e) => {
+              e.preventDefault();
+              modelIframe.src = spec.link;
+              iframeWrapper.style.display = 'block';
+            };
+          } else {
+            modelLink.style.display = 'none';
+          }
         } else {
+          specOverlay.querySelector('h2').textContent = "仕様情報がありません";
+          specOverlay.querySelector('p').textContent = "このモデルの仕様はまだ登録されていません。";
           modelLink.style.display = 'none';
         }
-      } else {
-        specOverlay.querySelector('h2').textContent = "仕様情報がありません";
-        specOverlay.querySelector('p').textContent = "このモデルの仕様はまだ登録されていません。";
-        modelLink.style.display = 'none';
-      }
+      });
+
+    specButton.addEventListener('click', () => {
+      specOverlay.style.display = 'flex';
     });
 
-  specButton.addEventListener('click', () => {
-    specOverlay.style.display = 'flex';
-  });
-
-  closeSpec.addEventListener('click', () => {
-    specOverlay.style.display = 'none';
-    iframeWrapper.style.display = 'none';
-    modelIframe.src = "";
-  });
-</script>
+    closeSpec.addEventListener('click', () => {
+      specOverlay.style.display = 'none';
+      iframeWrapper.style.display = 'none';
+      modelIframe.src = "";
+    });
+  </script>
   
 </body>
 </html>
